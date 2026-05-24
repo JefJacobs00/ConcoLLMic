@@ -18,6 +18,21 @@ from app.model import common
 from app.model.common import Model, ModelNoResponseError, Usage
 
 
+def _has_cache_control(messages: list[dict]) -> bool:
+    """
+    Detect Anthropic-style prompt caching markers on the OpenAI-format message list.
+    """
+    for msg in messages:
+        if "cache_control" in msg:
+            return True
+        content = msg.get("content")
+        if isinstance(content, list):
+            for item in content:
+                if isinstance(item, dict) and "cache_control" in item:
+                    return True
+    return False
+
+
 class GeminiModel(Model):
     """
     Base class for creating Singleton instances of Gemini models.
@@ -41,7 +56,9 @@ class GeminiModel(Model):
     ):
         if self._initialized:
             return
-        super().__init__(name, cost_per_input, cost_per_output, parallel_tool_call)
+        super().__init__(
+            f"gemini/{name}", cost_per_input, cost_per_output, parallel_tool_call
+        )
         self.max_output_token = max_output_token
         self._initialized = True
 
@@ -82,6 +99,17 @@ class GeminiModel(Model):
             temperature = common.MODEL_TEMP
 
         try:
+            provider_model_name = self.name.removeprefix("gemini/")
+            api_key = self.check_api_key()
+            has_cached_content = _has_cache_control(messages)
+            request_kwargs = dict(kwargs)
+
+            # Gemini cachedContent requests cannot also send request-level toolConfig.
+            # LiteLLM maps OpenAI `tool_choice` to Gemini `toolConfig`, so drop only
+            # that field for cached requests and keep the cache markers intact.
+            if has_cached_content:
+                request_kwargs.pop("tool_choice", None)
+
             if response_format == "json_object":
                 last_content = messages[-1]["content"]
                 last_content += "\nYour response should start with { and end with }. DO NOT write anything else other than the json."
@@ -89,14 +117,16 @@ class GeminiModel(Model):
 
             start_time = time.time()
             response = litellm.completion(
-                model=self.name,
+                model=provider_model_name,
+                custom_llm_provider="gemini",
+                api_key=api_key,
                 messages=messages,
                 temperature=temperature,
                 max_tokens=self.max_output_token,
                 top_p=top_p,
                 stream=False,
                 tools=tools,
-                **kwargs,
+                **request_kwargs,
             )
 
             latency = time.time() - start_time
@@ -165,7 +195,7 @@ class GeminiModel(Model):
 class Gemini2_0Flash(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-2.0-flash",
+            "gemini-2.0-flash",
             0.0000001,
             0.0000004,
             parallel_tool_call=True,
@@ -177,7 +207,7 @@ class Gemini2_0Flash(GeminiModel):
 class Gemini2_5Flash(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-2.5-flash",
+            "gemini-2.5-flash",
             0.0000003,
             0.0000025,
             parallel_tool_call=True,
@@ -189,7 +219,7 @@ class Gemini2_5Flash(GeminiModel):
 class Gemini2_5Pro(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-2.5-pro",
+            "gemini-2.5-pro",
             0.00000125,
             0.00001,
             parallel_tool_call=True,
@@ -201,7 +231,7 @@ class Gemini2_5Pro(GeminiModel):
 class Gemini3Flash(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-3-flash-preview",
+            "gemini-3-flash-preview",
             0.0000005,
             0.000003,
             parallel_tool_call=True,
@@ -213,7 +243,7 @@ class Gemini3Flash(GeminiModel):
 class Gemini3_1Pro(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-3.1-pro-preview",
+            "gemini-3.1-pro-preview",
             0.000002,
             0.000012,
             parallel_tool_call=True,
@@ -225,7 +255,7 @@ class Gemini3_1Pro(GeminiModel):
 class Gemini3_5Flash(GeminiModel):
     def __init__(self):
         super().__init__(
-            "gemini/gemini-3.5-flash",
+            "gemini-3.5-flash",
             0.0000015,
             0.000009,
             parallel_tool_call=True,
