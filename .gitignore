@@ -15,3 +15,5 @@ out/
 */*/*.o
 coverage.csv
 .DS_Store
+CLAUDE.md
+AGENTS.md

@@ -1,4 +1,4 @@
-from app.model import claude, common, gpt
+from app.model import claude, common, gemini, gpt
 
 
 def register_all_models() -> None:
@@ -26,6 +26,12 @@ def register_all_models() -> None:
     common.register_model(claude.Claude3_7Sonnet())
     common.register_model(claude.Claude3_7Sonnet_128k())
     common.register_model(claude.Claude4_5Sonnet())
+    common.register_model(gemini.Gemini2_0Flash())
+    common.register_model(gemini.Gemini2_5Flash())
+    common.register_model(gemini.Gemini2_5Pro())
+    common.register_model(gemini.Gemini3Flash())
+    common.register_model(gemini.Gemini3_1Pro())
+    common.register_model(gemini.Gemini3_5Flash())
 
     # register default model as selected
     common.SELECTED_MODEL = claude.Claude4_5Sonnet()
