@@ -32,7 +32,6 @@ from app.agents.tools import (
     process_report_functions,
 )
 from app.data_structures import MessageThread
-from app.model import claude
 from app.model.common import Usage
 from app.utils.utils import (
     detect_language,
@@ -390,8 +389,13 @@ class InstrumentationAgent:
     # retry times for instrumentation to pass the `check_instrumentation`
     INSTRUMENTATION_RETRY_TIMES = 3
 
-    def __init__(self, model=claude.Claude4_5Sonnet(max_output_token=32768)):
-        self.model = model
+    def __init__(self, model=None):
+        if model is None:
+            import app.model.common as common
+
+            self.model = common.SELECTED_MODEL
+        else:
+            self.model = model
         self.model.setup()
 
     def cleanup(self):

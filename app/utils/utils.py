@@ -9,7 +9,7 @@ import sys
 import time
 from typing import Any
 
-from anthropic import Anthropic
+from litellm import token_counter
 from loguru import logger
 
 PROJECT_DIR = ""
@@ -1152,15 +1152,14 @@ def detected_crash(stderr: str, returncode: int) -> tuple[bool, str]:
     return False, None
 
 
-def estimate_text_token(
-    text: str | None, model: str = "claude-sonnet-4-5-20250929"
-) -> int:
+def estimate_text_token(text: str | None, model: str = "") -> int:
     """
     Estimate the number of tokens in a text.
     """
-    client = Anthropic()
 
-    count = client.beta.messages.count_tokens(
-        model=model, messages=[{"role": "user", "content": text}]
-    )
-    return count.input_tokens
+    if model == "":
+        import app.model.common as common
+
+        model = common.SELECTED_MODEL.name
+
+    return int(token_counter(model=model, messages=[{"role": "user", "content": text}]))
