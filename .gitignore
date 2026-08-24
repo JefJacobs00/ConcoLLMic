@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.dSYM
-experiments/*/*/results
+experiments/*/*/*/results
 .vscode/
 logs/
 out/

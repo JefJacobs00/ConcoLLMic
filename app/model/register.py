@@ -1,4 +1,4 @@
-from app.model import claude, common, gemini, gpt
+from app.model import claude, common, gemini, gpt, local
 
 
 def register_all_models() -> None:
@@ -32,6 +32,10 @@ def register_all_models() -> None:
     common.register_model(gemini.Gemini3Flash())
     common.register_model(gemini.Gemini3_1Pro())
     common.register_model(gemini.Gemini3_5Flash())
+
+    # locally-served, OpenAI-compatible models (vLLM, SGLang, ...)
+    common.register_model(local.Qwen3_5_9B())
+    common.register_model(local.Qwen3_8_27B_NVFP4())
 
     # register default model as selected
     common.SELECTED_MODEL = claude.Claude4_5Sonnet()

@@ -561,8 +561,8 @@ def summarize(
 
         if len(state["selected_branches"]) > 0 and (
             es_tokens
-            > 188000  # delete code request tool messages after selecting target branch
-            # Note: 200k context window includes 8k for output tokens
+            > (common.SELECTED_MODEL.sum_th)  # delete code request tool messages after selecting target branch
+            # Note: token_th = (ctx - otp) * 0.95
         ):  # TODO: improve this
             logger.debug(
                 "Removing code request tool messages due to token limit, msg_thread before removal: {}",
@@ -576,7 +576,7 @@ def summarize(
                 remove_cnt,
             )
 
-        if es_tokens > 188000:
+        if es_tokens > (common.SELECTED_MODEL.sum_th):
             logger.error(
                 "Reached the maximum number of tokens, finishing summarization..."
             )

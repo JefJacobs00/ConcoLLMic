@@ -91,6 +91,14 @@ Use the `{ReviewSolveAnswerTool["function"]["name"]}` tool to provide your revie
 
 CONSTRAINT_SOLVING_TEMPERATURE = 0.0
 
+# Maximum agent turns per solve before the constraint is abandoned.
+# Without a cap the loop's only exits are a solution or the prompt outgrowing the
+# model's context window, and the latter raises a non-retryable BadRequestError
+# that propagates out of the worker thread and aborts the whole campaign. At
+# temperature 0 a model that misreads the task regenerates the same failing tool
+# call indefinitely, so this is reachable in practice.
+MAX_SOLVING_ITERATIONS = 20
+
 
 def solve(
     execution_information: str,
@@ -146,8 +154,21 @@ def solve(
     last_call: list[str] = ["INITIAL"]
 
     initial_prompt_caching_tokens = None
+    iteration = 0
 
     while not solution_found:
+        iteration += 1
+        if iteration > MAX_SOLVING_ITERATIONS:
+            # Treat non-convergence as unsatisfiable: the caller already handles
+            # that by finishing the test case, so one branch is lost, not the run.
+            logger.warning(
+                "Solver did not converge within {} iterations; abandoning this constraint.",
+                MAX_SOLVING_ITERATIONS,
+            )
+            is_satisfiable = False
+            python_execution = None
+            break
+
         # Call model with tools support
         response_content, response_tool_calls, usage = common.SELECTED_MODEL.call(
             msg_thread.to_msg(),
@@ -262,6 +283,7 @@ def review_solve(
     finished = False
     need_adjust = None
     new_python_execution = None
+    iteration = 0
 
     # Define available tools
     available_tools = [
@@ -276,6 +298,16 @@ def review_solve(
     last_call: list[str] = ["INITIAL"]
 
     while not finished:
+        iteration += 1
+        if iteration > MAX_SOLVING_ITERATIONS:
+            logger.warning(
+                "Solver review did not converge within {} iterations; keeping the original solution.",
+                MAX_SOLVING_ITERATIONS,
+            )
+            need_adjust = False
+            new_python_execution = None
+            break
+
         # Call model with tools support
         response_content, response_tool_calls, usage = common.SELECTED_MODEL.call(
             msg_thread.to_msg(),

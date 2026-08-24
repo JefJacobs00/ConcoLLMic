@@ -285,13 +285,29 @@ class Model(ABC):
         cost_per_input: float,
         cost_per_output: float,
         parallel_tool_call: bool = False,
+        context_length: int = 200_000,
+        max_output_length :int= 8_000
     ):
+        self.ctx_len: int = context_length
+        self.output_len: int = max_output_length
         self.name: str = name
         # cost stats - zero for local models
         self.cost_per_input: float = cost_per_input
         self.cost_per_output: float = cost_per_output
         # whether the model supports parallel tool call
         self.parallel_tool_call: bool = parallel_tool_call
+
+    @property
+    def sum_th(self) -> int:
+        """
+        Token threshold at which the summarizer must stop growing its message
+        thread. A property rather than a stored value because `ctx_len` is only
+        known after setup() has asked the server, which happens after __init__.
+        The 0.95 leaves room for the estimator that feeds this comparison to be
+        wrong: stopping early costs a few branches, overshooting raises a
+        non-retryable 400 that ends the campaign.
+        """
+        return int((self.ctx_len - self.output_len) * 0.95)
 
     @abstractmethod
     def check_api_key(self) -> str:
