@@ -28,6 +28,26 @@ DEFAULT_API_BASE = "http://localhost:8000/v1"
 # so it needs headroom above what the visible answer costs.
 DEFAULT_MAX_OUTPUT_TOKENS = 16384
 
+# Sampling knobs litellm recognises as OpenAI fields and forwards as-is. Anything
+# outside this set is a server extension: `drop_params=True` deletes it from the
+# top level without a word, so it has to travel in `extra_body` to reach vLLM.
+# This is how `top_k`, `repetition_penalty` and `thinking_token_budget` were all
+# silently discarded while appearing to be set.
+OPENAI_SAMPLING_PARAMS = frozenset(
+    {
+        "temperature",
+        "top_p",
+        "n",
+        "seed",
+        "stop",
+        "logprobs",
+        "top_logprobs",
+        "logit_bias",
+        "frequency_penalty",
+        "presence_penalty",
+    }
+)
+
 
 def _sanitize_messages(messages: list[dict]) -> list[dict]:
     """
@@ -70,6 +90,8 @@ class LocalOpenAICompatModel(Model):
 
     `served_name` must match what the server advertises (vLLM's `--served-model-name`,
     which defaults to the HuggingFace repo path).
+
+    `gen_kwargs` holds this model's generation settings; see `QWEN_SAMPLING`.
     """
 
     _instances = {}
@@ -87,7 +109,7 @@ class LocalOpenAICompatModel(Model):
         max_output_length: int = DEFAULT_MAX_OUTPUT_TOKENS,
         context_length: int = 200_000,
         parallel_tool_call: bool = True,
-        reasoning_effort: str|None = None,
+        gen_kwargs: dict | None = None,
     ):
         if self._initialized:
             return
@@ -98,8 +120,10 @@ class LocalOpenAICompatModel(Model):
         self.api_base = api_base or os.getenv("LOCAL_MODEL_API_BASE", DEFAULT_API_BASE)
         self.max_output_token = max_output_length
         self._initialized = True
-        self.reasoning_effort = reasoning_effort
-        
+        # Sampling defaults for this checkpoint. Empty means "whatever the agent
+        # asked for", which keeps the caller's temperature escalation intact.
+        self.gen_kwargs = dict(gen_kwargs or {})
+
     def setup(self) -> None:
         """
         Teach LiteLLM about this model so its cost lookups resolve to zero instead of
@@ -174,6 +198,16 @@ class LocalOpenAICompatModel(Model):
             if request_kwargs.get("tool_choice") == "any":
                 request_kwargs["tool_choice"] = "required"
 
+            # Whether the deployment can fan out tool calls is a property of the
+            # model, not of the turn: the agents ask for it unconditionally, so
+            # treat their value as a request and let the class declaration veto
+            # it. Without this the flag set on every model class is written and
+            # never read, and a server that cannot do it is asked anyway.
+            if "parallel_tool_calls" in request_kwargs:
+                request_kwargs["parallel_tool_calls"] = bool(
+                    request_kwargs["parallel_tool_calls"]
+                ) and bool(self.parallel_tool_call)
+
             if response_format == "json_object":
                 last_content = messages[-1]["content"]
                 if isinstance(last_content, list):
@@ -187,6 +221,14 @@ class LocalOpenAICompatModel(Model):
                         "DO NOT write anything else other than the json."
                     )
 
+            gen_kwargs = {"temperature": temperature, "top_p": top_p, **self.gen_kwargs}
+            sampling = {k: v for k, v in gen_kwargs.items() if k in OPENAI_SAMPLING_PARAMS}
+            extra_body = {
+                k: v for k, v in gen_kwargs.items() if k not in OPENAI_SAMPLING_PARAMS
+            }
+
+            logger.debug("Generation params: {} + extra_body {}", sampling, extra_body)
+
             start_time = time.time()
 
             response = litellm.completion(
@@ -195,16 +237,12 @@ class LocalOpenAICompatModel(Model):
                 api_base=self.api_base,
                 api_key=self.check_api_key(),
                 messages=_sanitize_messages(messages),
-                temperature=0.1,
-                #max_tokens=self.max_output_token,
                 max_tokens=self.max_output_token,
-                reasoning_effort=self.reasoning_effort,
-                top_p=0.98,
                 stream=False,
-                thinking_token_budget=16_000,
-                repetition_penalty=1.05,
                 tools=tools,
+                extra_body=extra_body,
                 drop_params=True,  # tolerate servers lacking e.g. parallel_tool_calls
+                **sampling,
                 **request_kwargs,
             )
 
@@ -231,6 +269,16 @@ class LocalOpenAICompatModel(Model):
             first_resp_choice = response.choices[0]
             assert isinstance(first_resp_choice, Choices)
             resp_msg: Message = first_resp_choice.message
+
+            if first_resp_choice.finish_reason == "length":
+                # The agents re-prompt when a turn carries no tool call, so an
+                # unreported truncation looks exactly like a model that ignored
+                # its tools -- and loops.
+                logger.warning(
+                    "Response hit the {}-token output budget and was truncated; "
+                    "any tool call it was building is lost.",
+                    self.max_output_token,
+                )
 
             content = self.extract_resp_content(resp_msg)
             tool_calls = (
@@ -266,19 +314,47 @@ class LocalOpenAICompatModel(Model):
             raise e
 
 
+# Qwen's recommended thinking-mode sampling. `top_k` and `repetition_penalty` are
+# vLLM extensions, so they go out in extra_body, where the server reads them,
+# instead of the top level where litellm silently drops them.
+QWEN_SAMPLING = {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "repetition_penalty": 1.05,
+    "reasoning_effort": "medium",
+}
+
+
 class Qwen3_5_9B(LocalOpenAICompatModel):
     def __init__(self):
-        super().__init__("Qwen/Qwen3.5-9B", max_output_length=32_768)
+        super().__init__(
+            "Qwen/Qwen3.5-9B",
+            max_output_length=32_768,
+            gen_kwargs=dict(QWEN_SAMPLING),
+        )
         self.note = "Qwen3.5 9B served locally. Hybrid attention, reasoning model."
 
 
 class Qwen3_8_27B_NVFP4(LocalOpenAICompatModel):
     def __init__(self):
-        super().__init__("gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090", max_output_length=32_768 , context_length=262144)
+        super().__init__(
+            "gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090",
+            max_output_length=32_768,
+            context_length=262144,
+            gen_kwargs=dict(QWEN_SAMPLING),
+        )
         self.note = "Qwen3.8 27B quantized to NVFP4, served locally."
 
-# TODO: pass kwargs into generation.
 class Qwen3_8_27B(LocalOpenAICompatModel):
     def __init__(self):
-        super().__init__("Qwen/Qwen3.8-27B", max_output_length=32_768, context_length=262144, reasoning_effort="medium")
+        # Same dict as the NVFP4 class on purpose: these two exist to be compared,
+        # so any change here belongs there too, or precision stops being the only
+        # variable between them.
+        super().__init__(
+            "Qwen/Qwen3.8-27B",
+            max_output_length=32_768,
+            context_length=262144,
+            gen_kwargs=dict(QWEN_SAMPLING),
+        )
         self.note = "Qwen3.8 27B at bf16/fp16 served locally. ~54 GB of weights."
