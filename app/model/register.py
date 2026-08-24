@@ -36,6 +36,7 @@ def register_all_models() -> None:
     # locally-served, OpenAI-compatible models (vLLM, SGLang, ...)
     common.register_model(local.Qwen3_5_9B())
     common.register_model(local.Qwen3_8_27B_NVFP4())
+    common.register_model(local.Qwen3_8_27B())
 
     # register default model as selected
     common.SELECTED_MODEL = claude.Claude4_5Sonnet()

@@ -269,3 +269,8 @@ class Qwen3_8_27B_NVFP4(LocalOpenAICompatModel):
     def __init__(self):
         super().__init__("gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090", max_output_length=32_768 , context_length=262144)
         self.note = "Qwen3.8 27B quantized to NVFP4, served locally."
+
+class Qwen3_8_27B(LocalOpenAICompatModel):
+    def __init__(self):
+        super().__init__("Qwen/Qwen3.8-27B", max_output_length=32_768, context_length=262144)
+        self.note = "Qwen3.8 27B at bf16/fp16 served locally. ~54 GB of weights."

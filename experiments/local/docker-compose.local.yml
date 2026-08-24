@@ -38,6 +38,7 @@ services:
       context: ../benchmarks/c_c++_programs
       dockerfile: concolic-common.Dockerfile
     image: concolic:latest
+    network_mode: host
 
   confetti-concolic:
     <<: *common-resources
@@ -48,9 +49,6 @@ services:
     depends_on:
       - concolic
     environment: *local-model
-    extra_hosts:
-      # Lets the container reach vLLM listening on the host.
-      - "host.docker.internal:host-gateway"
     volumes:
       - ../benchmarks/c_c++_programs/confetti/results:/shared/:rw
       # The local working tree replaces the image's GitHub clone.
@@ -60,6 +58,7 @@ services:
 
   bc-concolic:
     <<: *common-resources
+    network_mode: host
     build:
       context: ../benchmarks/c_c++_programs/bc
       dockerfile: concolic.Dockerfile
@@ -67,8 +66,6 @@ services:
     depends_on:
       - concolic
     environment: *local-model
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     volumes:
       - ../benchmarks/c_c++_programs/bc/results:/shared/:rw
       - ../../:/concolic-agent:rw
