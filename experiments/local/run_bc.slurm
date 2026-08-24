@@ -13,7 +13,7 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=128G
 #SBATCH --gpus-per-node=1
-#SBATCH --time=00:30:00
+#SBATCH --time=10:00:00
 #SBATCH --output=slurm-%j.out
 ### FILL IN the partition, then drop the extra hashes:
 #SBATCH --partition=gpu_b200
@@ -69,6 +69,7 @@ podman compose -f docker-compose.local.yml build concolic "${BENCHMARK}-concolic
     --served-model-name "$SERVED_NAME" \
     --tensor-parallel-size "$TENSOR_PARALLEL" \
     --max-model-len "$MAX_MODEL_LEN" \
+    --speculative-config '{"method":"ngram","num_speculative_tokens":5,"prompt_lookup_min":2,"prompt_lookup_max":5}' \
     --enable-auto-tool-choice \
     --tool-call-parser qwen3_xml \
     --reasoning-parser qwen3 \

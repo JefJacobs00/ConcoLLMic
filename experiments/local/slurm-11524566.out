@@ -1,0 +1,273 @@
+SLURM_JOB_ID: 11524566
+SLURM_JOB_USER: vsc36781
+SLURM_JOB_ACCOUNT: lp_distrinet_gent
+SLURM_JOB_NAME: concollmic
+SLURM_CLUSTER_NAME: mindwell
+SLURM_JOB_PARTITION: gpu_b200
+SLURM_NNODES: 1
+SLURM_NODELIST: r11g12
+SLURM_JOB_CPUS_PER_NODE: 17
+SLURM_JOB_GPUS: 2
+Date: Mon Aug 24 15:43:09 CEST 2026
+Walltime: 00-10:00:00
+========================================================================
+time="2026-08-24T15:43:10+02:00" level=warning msg="\"/\" is not a shared mount, this could cause issues or missing mounts with rootless containers"
+time="2026-08-24T15:43:10+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:43:10+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:43:10+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:43:10+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+time="2026-08-24T15:43:10+02:00" level=warning msg="Failed to add pause process to systemd sandbox cgroup: dbus: couldn't determine address of session bus"
+time="2026-08-24T15:43:10+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:43:10+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:43:10+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:43:10+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+time="2026-08-24T15:43:11+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:43:11+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:43:11+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:43:11+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+[4m>>>> Executing external compose provider "/user/leuven/367/vsc36781/.local/bin/docker-compose". Please see podman-compose(1) for how to disable this message. <<<<
+
+[0m Image concolic:latest Building 
+ Image concolic:latest Building 
+Sending build context to Docker daemon  524.5kBSending build context to Docker daemon  1.579MBSending build context to Docker daemon   6.83MBSending build context to Docker daemon   12.6MBSending build context to Docker daemon  18.91MBSending build context to Docker daemon  25.73MBSending build context to Docker daemon  30.46MBSending build context to Docker daemon  36.23MBSending build context to Docker daemon  40.96MBSending build context to Docker daemon   46.2MBSending build context to Docker daemon  50.92MBSending build context to Docker daemon  57.22MBSending build context to Docker daemon  63.52MBSending build context to Docker daemon  69.28MBSending build context to Docker daemon  75.05MBSending build context to Docker daemon  80.82MBSending build context to Docker daemon  85.55MBSending build context to Docker daemon  90.27MBSending build context to Docker daemon  95.52MBSending build context to Docker daemon  99.19MBSending build context to Docker daemon  104.4MBSending build context to Docker daemon  108.3MB
+STEP 1/11: FROM ubuntu:22.04
+STEP 2/11: ENV DEBIAN_FRONTEND=noninteractive
+--> Using cache 71e8cf3685e0253c40c2a10c845b0fd7a7ecc8ea532ac4f1764351b0367b38d4
+--> 71e8cf3685e0
+STEP 3/11: RUN apt-get update && apt-get install -y     build-essential     wget     curl     git     autoconf     libtool     pkg-config     cmake     python3     python3-pip     ca-certificates     lcov     clang-12     clang++-12     xxd     unzip     automake     build-essential     gcc     g++     zlib1g     make
+--> Using cache e3da863a4d503f265e7cdea3ae0b472538d9e65b5cae5d5584d542b6922f80f8
+--> e3da863a4d50
+STEP 4/11: RUN ln -sf /usr/bin/clang-12 /usr/bin/clang
+--> Using cache 35e74216ba2384bc3c3f680341205819f70d659be5f02e19b7768b6dc9373ca1
+--> 35e74216ba23
+STEP 5/11: RUN ln -sf /usr/bin/clang++-12 /usr/bin/clang++
+--> Using cache 4bfe2132d66cd30ee4d9a0f4dd37df85139993f57d518bf5bfd8cc961693609b
+--> 4bfe2132d66c
+STEP 6/11: RUN pip3 install gcovr==6.0
+--> Using cache da13bbd779443177c098c01ddca7f07b66d25f2068de3d474cbf0bf41918e6ce
+--> da13bbd77944
+STEP 7/11: RUN git clone https://github.com/ConcoLLMic/ConcoLLMic /concolic-agent
+--> Using cache 08fc42be45298b935acc12f54d54110326e7c22200aacf48a48f9efd56015619
+--> 08fc42be4529
+STEP 8/11: WORKDIR /concolic-agent
+--> Using cache 384bc002056fcfa16e881d1e9c7ac76794336608bfb10c98fb9d0a5122077e4f
+--> 384bc002056f
+STEP 9/11: RUN pip install -r requirements.txt
+--> Using cache 4f3444b19ab7fa317efd453b0e18a3d52fb8ce7053b93c08581657a1e522c540
+--> 4f3444b19ab7
+STEP 10/11: RUN pip install -r requirements-dev.txt
+--> Using cache 77effcbc91d000c5f9e3eb7f86962608886495f63c811b8e5ae652cf20e5c235
+--> 77effcbc91d0
+STEP 11/11: LABEL "com.docker.compose.image.builder"="classic"
+--> Using cache 4683e1795a3f7357cfc0f18f30ac4b0d6783081b869f25bfecabf611866e7914
+COMMIT docker.io/library/concolic:latest
+--> 4683e1795a3f
+Successfully tagged docker.io/library/concolic:latest
+4683e1795a3f7357cfc0f18f30ac4b0d6783081b869f25bfecabf611866e7914
+Successfully built 4683e1795a3f
+Successfully tagged concolic:latest
+ Image concolic:latest Built 
+ Image concolic:latest Built 
+ Image bc-concolic:latest Building 
+ Image bc-concolic:latest Building 
+Sending build context to Docker daemon  524.4kBSending build context to Docker daemon  572.3kB
+STEP 1/21: FROM concolic AS bc
+STEP 2/21: USER root
+--> Using cache c489a614d212543d28595605a4e5f7a3ddf2c26afcc033930e4a2a8209b64fc8
+--> c489a614d212
+STEP 3/21: ENV DEBIAN_FRONTEND=noninteractive
+--> Using cache 215af5d90e1f74a18cae5d14152e27b1478e234559c0c018485441835b9715b0
+--> 215af5d90e1f
+STEP 4/21: RUN apt-get update && apt-get install -y     texinfo &&     rm -rf /var/lib/apt/lists/*
+--> Using cache e0c0add72043cc4c27a817dbb1e0a9e18d4f9b9c423b8ffa0225cf6a7904b88b
+--> e0c0add72043
+STEP 5/21: WORKDIR /
+--> Using cache 2e7dd49b290497ff75173f9c8a50955c8776f4a420db0dfc812a9a73f3a9cea2
+--> 2e7dd49b2904
+STEP 6/21: RUN wget https://ftp.gnu.org/gnu/bc/bc-1.08.1.tar.gz
+--> Using cache a59b6471d713fde4ebe477d3028c8db72a901303580e4bead531c7fb617b5028
+--> a59b6471d713
+STEP 7/21: RUN tar -xzf bc-1.08.1.tar.gz
+--> Using cache 3b12f1d585c093f968d82722c50c30a23fa0df440a8357e73fca1b5a553dad53
+--> 3b12f1d585c0
+STEP 8/21: RUN mv bc-1.08.1 /bc-gcov
+--> Using cache f7b87179fb2c9e4e62989171c49dfb790b26354f94c9a198a1ed7be267b8e738
+--> f7b87179fb2c
+STEP 9/21: COPY ./bc-1.08.1-instr.tar.gz ./bc-1.08.1-instr.tar.gz
+--> Using cache 5e9af97c8c5a28b7843aed27faef03e95b7c420b8e7e001f6a914231a311d117
+--> 5e9af97c8c5a
+STEP 10/21: RUN tar -xzf bc-1.08.1-instr.tar.gz && mv bc-1.08.1-instr /bc-instr
+--> Using cache a812c88e7a506bb623452b60b8d7280f4b07d904c932b4a11c81eee94ad2e5a3
+--> a812c88e7a50
+STEP 11/21: WORKDIR /bc-gcov
+--> Using cache 4572c1622e8853706a5714c8621938c3323e7036696a188107c61f150311b967
+--> 4572c1622e88
+STEP 12/21: RUN CC=gcc CXX=g++ ./configure
+--> Using cache 6812254c0854f7714128b8f76c6f444168080dfd63ddd91441ac29ebb4c6b60a
+--> 6812254c0854
+STEP 13/21: RUN CC=gcc CXX=g++ make AM_CFLAGS="-fprofile-arcs -ftest-coverage"
+--> Using cache 71fffedec3980c40b1f0201441145726030f7c95587541fcabf8d9f7c0845e87
+--> 71fffedec398
+STEP 14/21: WORKDIR /bc-instr
+--> Using cache 31e09f289c08ca4de6be3db2c699e6b686866ec1afde206cb9a569e9189f8b7b
+--> 31e09f289c08
+STEP 15/21: RUN CC=gcc CXX=g++ ./configure
+--> Using cache a8b20858fc4044ea8b7b65b5b3401dca0472909a7b5b82a3028eddff0dd664f4
+--> a8b20858fc40
+STEP 16/21: RUN CC=gcc CXX=g++ make
+--> Using cache 5ca6d27e3a9fc423688c494459c95f5709ce8f3e1f7d01012da664447493285f
+--> 5ca6d27e3a9f
+STEP 17/21: COPY ./seed_execs /seed_execs
+--> Using cache 008fea0c4bb640feff86766ddc5dafad6fce3ea5238f922fde73c6794576d124
+--> 008fea0c4bb6
+STEP 18/21: COPY ./run.sh /run.sh
+--> Using cache 63f5086a602edb8eb6d3e8e87a4f7492ce5f885bc9c1f06ad23863037b8444df
+--> 63f5086a602e
+STEP 19/21: COPY ./coverage.sh /coverage.sh
+--> Using cache 51cfbd883f5823b017d8e1ea8aed60eea754c850071a4e26821158501e000e2e
+--> 51cfbd883f58
+STEP 20/21: CMD ["/bin/bash"]
+--> Using cache 9f76a041cc2fad3c1ce261a65a8a326e30a8895fd6a2da564cf60b51b93689e6
+--> 9f76a041cc2f
+STEP 21/21: LABEL "com.docker.compose.image.builder"="classic"
+--> Using cache 418354de54dbd3663b234ebad7297f6dbfc959c0c8aeacdcc4774df35754c61f
+COMMIT docker.io/library/bc-concolic:latest
+--> 418354de54db
+Successfully tagged docker.io/library/bc-concolic:latest
+418354de54dbd3663b234ebad7297f6dbfc959c0c8aeacdcc4774df35754c61f
+Successfully built 418354de54db
+Successfully tagged bc-concolic:latest
+ Image bc-concolic:latest Built 
+ Image bc-concolic:latest Built 
+waiting for vLLM (log: vllm-11524566.log) ...
+vLLM ready, starting bc
+time="2026-08-24T15:45:00+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:45:00+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:45:00+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:45:00+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+[4m>>>> Executing external compose provider "/user/leuven/367/vsc36781/.local/bin/docker-compose". Please see podman-compose(1) for how to disable this message. <<<<
+
+[0m Container concollmic-local-bc-concolic-1 Recreate 
+ Container concollmic-local-bc-concolic-1 Recreated 
+Attaching to bc-concolic-1
+ Container concollmic-local-bc-concolic-1 Starting 
+ Container concollmic-local-bc-concolic-1 Started 
+bc-concolic-1  | Using specified timeout of 24h for testing bc with concolic.
+bc-concolic-1  | Running with Concolic
+bc-concolic-1  | Setting up Concolic environment
+bc-concolic-1  | /concolic-agent /bc-instr
+bc-concolic-1  | Requirement already satisfied: loguru==0.7.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 1)) (0.7.3)
+bc-concolic-1  | Requirement already satisfied: rich==13.9.4 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 2)) (13.9.4)
+bc-concolic-1  | Requirement already satisfied: openai==2.9.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 3)) (2.9.0)
+bc-concolic-1  | Requirement already satisfied: tenacity==8.2.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 4)) (8.2.3)
+bc-concolic-1  | Requirement already satisfied: litellm==1.80.8 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 5)) (1.80.8)
+bc-concolic-1  | Requirement already satisfied: httpx[socks]==0.27.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 6)) (0.27.2)
+bc-concolic-1  | Requirement already satisfied: pre-commit==3.6.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 7)) (3.6.0)
+bc-concolic-1  | Requirement already satisfied: pydantic-core==2.27.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 8)) (2.27.2)
+bc-concolic-1  | Requirement already satisfied: pydantic-xml==2.14.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 9)) (2.14.3)
+bc-concolic-1  | Requirement already satisfied: pydantic==2.10.6 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 10)) (2.10.6)
+bc-concolic-1  | Requirement already satisfied: z3-solver==4.14.1.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 11)) (4.14.1.0)
+bc-concolic-1  | Requirement already satisfied: pytest in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 12)) (9.1.1)
+bc-concolic-1  | Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 13)) (2.3.3)
+bc-concolic-1  | Requirement already satisfied: pyyaml==6.0.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 14)) (6.0.2)
+bc-concolic-1  | Requirement already satisfied: ruamel.yaml==0.18.10 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 15)) (0.18.10)
+bc-concolic-1  | Requirement already satisfied: dill==0.3.9 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 16)) (0.3.9)
+bc-concolic-1  | Requirement already satisfied: anthropic==0.75.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 17)) (0.75.0)
+bc-concolic-1  | Requirement already satisfied: transformers==4.37.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 18)) (4.37.2)
+bc-concolic-1  | Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (4.2.0)
+bc-concolic-1  | Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (2.21.0)
+bc-concolic-1  | Requirement already satisfied: typing-extensions<5.0,>=4.0.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (4.16.0)
+bc-concolic-1  | Requirement already satisfied: anyio<5,>=3.5.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (4.14.2)
+bc-concolic-1  | Requirement already satisfied: tqdm>4 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (4.70.0)
+bc-concolic-1  | Requirement already satisfied: distro<2,>=1.7.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (1.9.0)
+bc-concolic-1  | Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (0.16.0)
+bc-concolic-1  | Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (1.3.1)
+bc-concolic-1  | Requirement already satisfied: importlib-metadata>=6.8.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (9.0.0)
+bc-concolic-1  | Requirement already satisfied: grpcio<1.68.0,>=1.62.3 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.67.1)
+bc-concolic-1  | Requirement already satisfied: python-dotenv>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.2.3)
+bc-concolic-1  | Requirement already satisfied: fastuuid>=0.13.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.14.0)
+bc-concolic-1  | Requirement already satisfied: aiohttp>=3.10 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.14.3)
+bc-concolic-1  | Requirement already satisfied: click in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (8.4.2)
+bc-concolic-1  | Requirement already satisfied: jinja2<4.0.0,>=3.1.2 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.1.6)
+bc-concolic-1  | Requirement already satisfied: tiktoken>=0.7.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.14.0)
+bc-concolic-1  | Requirement already satisfied: tokenizers in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.15.2)
+bc-concolic-1  | Requirement already satisfied: jsonschema<5.0.0,>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (4.26.0)
+bc-concolic-1  | Requirement already satisfied: idna in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (3.19)
+bc-concolic-1  | Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (2026.7.22)
+bc-concolic-1  | Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (1.0.9)
+bc-concolic-1  | Requirement already satisfied: socksio==1.* in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (1.0.0)
+bc-concolic-1  | Requirement already satisfied: identify>=1.0.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (2.6.19)
+bc-concolic-1  | Requirement already satisfied: cfgv>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (3.5.0)
+bc-concolic-1  | Requirement already satisfied: virtualenv>=20.10.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (21.7.4)
+bc-concolic-1  | Requirement already satisfied: nodeenv>=0.11.1 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (1.10.0)
+bc-concolic-1  | Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic==2.10.6->-r requirements.txt (line 10)) (0.8.0)
+bc-concolic-1  | Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /usr/local/lib/python3.10/dist-packages (from ruamel.yaml==0.18.10->-r requirements.txt (line 15)) (0.2.15)
+bc-concolic-1  | Requirement already satisfied: docstring-parser<1,>=0.15 in /usr/local/lib/python3.10/dist-packages (from anthropic==0.75.0->-r requirements.txt (line 17)) (0.18.0)
+bc-concolic-1  | Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (26.3)
+bc-concolic-1  | Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (0.8.0)
+bc-concolic-1  | Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.2.6)
+bc-concolic-1  | Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (3.32.4)
+bc-concolic-1  | Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2026.7.19)
+bc-concolic-1  | Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.34.2)
+bc-concolic-1  | Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (0.36.2)
+bc-concolic-1  | Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx[socks]==0.27.2->-r requirements.txt (line 6)) (0.16.0)
+bc-concolic-1  | Requirement already satisfied: exceptiongroup>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (1.3.1)
+bc-concolic-1  | Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (2.3.0)
+bc-concolic-1  | Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (2.4.1)
+bc-concolic-1  | Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (1.6.0)
+bc-concolic-1  | Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2026.3.post1)
+bc-concolic-1  | Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2026.3)
+bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2.9.0.post0)
+bc-concolic-1  | Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (5.0.1)
+bc-concolic-1  | Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (0.5.2)
+bc-concolic-1  | Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.8.0)
+bc-concolic-1  | Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (2.7.1)
+bc-concolic-1  | Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (26.1.0)
+bc-concolic-1  | Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.24.5)
+bc-concolic-1  | Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.4.0)
+bc-concolic-1  | Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (6.7.1)
+bc-concolic-1  | Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.37.2->-r requirements.txt (line 18)) (1.6.0)
+bc-concolic-1  | Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.37.2->-r requirements.txt (line 18)) (2026.7.0)
+bc-concolic-1  | Requirement already satisfied: zipp>=3.20 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata>=6.8.0->litellm==1.80.8->-r requirements.txt (line 5)) (4.1.0)
+bc-concolic-1  | Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2<4.0.0,>=3.1.2->litellm==1.80.8->-r requirements.txt (line 5)) (3.0.3)
+bc-concolic-1  | Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (0.30.0)
+bc-concolic-1  | Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (0.37.0)
+bc-concolic-1  | Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (2025.9.1)
+bc-concolic-1  | Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich==13.9.4->-r requirements.txt (line 2)) (0.1.2)
+bc-concolic-1  | Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 13)) (1.17.0)
+bc-concolic-1  | Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (4.11.3)
+bc-concolic-1  | Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (0.4.3)
+bc-concolic-1  | Requirement already satisfied: python-discovery>=1.4.2 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (1.5.2)
+bc-concolic-1  | Requirement already satisfied: urllib3<3,>=1.26 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.37.2->-r requirements.txt (line 18)) (2.7.0)
+bc-concolic-1  | Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.37.2->-r requirements.txt (line 18)) (3.5.1)
+bc-concolic-1  | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+bc-concolic-1  | Requirement already satisfied: black==24.4.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 1)) (24.4.0)
+bc-concolic-1  | Requirement already satisfied: isort==5.13.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 2)) (5.13.2)
+bc-concolic-1  | Requirement already satisfied: pyupgrade==3.15.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 3)) (3.15.2)
+bc-concolic-1  | Requirement already satisfied: ruff==0.3.7 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 4)) (0.3.7)
+bc-concolic-1  | Requirement already satisfied: pyright==1.1.364 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 5)) (1.1.364)
+bc-concolic-1  | Requirement already satisfied: ruamel.yaml==0.18.10 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 6)) (0.18.10)
+bc-concolic-1  | Requirement already satisfied: venn==0.1.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 7)) (0.1.3)
+bc-concolic-1  | Requirement already satisfied: typing-extensions>=4.0.1 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.16.0)
+bc-concolic-1  | Requirement already satisfied: platformdirs>=2 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.11.3)
+bc-concolic-1  | Requirement already satisfied: tomli>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (2.4.1)
+bc-concolic-1  | Requirement already satisfied: click>=8.0.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (8.4.2)
+bc-concolic-1  | Requirement already satisfied: pathspec>=0.9.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (1.1.1)
+bc-concolic-1  | Requirement already satisfied: packaging>=22.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (26.3)
+bc-concolic-1  | Requirement already satisfied: mypy-extensions>=0.4.3 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (1.1.0)
+bc-concolic-1  | Requirement already satisfied: tokenize-rt>=5.2.0 in /usr/local/lib/python3.10/dist-packages (from pyupgrade==3.15.2->-r requirements-dev.txt (line 3)) (6.2.0)
+bc-concolic-1  | Requirement already satisfied: nodeenv>=1.6.0 in /usr/local/lib/python3.10/dist-packages (from pyright==1.1.364->-r requirements-dev.txt (line 5)) (1.10.0)
+bc-concolic-1  | Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /usr/local/lib/python3.10/dist-packages (from ruamel.yaml==0.18.10->-r requirements-dev.txt (line 6)) (0.2.15)
+bc-concolic-1  | Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from venn==0.1.3->-r requirements-dev.txt (line 7)) (3.10.9)
+bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.9.0.post0)
+bc-concolic-1  | Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.2.6)
+bc-concolic-1  | Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.5.0)
+bc-concolic-1  | Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (4.63.0)
+bc-concolic-1  | Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (0.12.1)
+bc-concolic-1  | Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.3.2)
+bc-concolic-1  | Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (12.3.0)
+bc-concolic-1  | Requirement already satisfied: pyparsing>=3 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (3.3.2)
+bc-concolic-1  | Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.7->matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.17.0)
+bc-concolic-1  | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+bc-concolic-1  | /bc-instr
+[2026-08-24T16:24:28.017] error: *** JOB 11524566 ON r11g12 CANCELLED AT 2026-08-24T16:24:28 DUE to SIGNAL Terminated ***

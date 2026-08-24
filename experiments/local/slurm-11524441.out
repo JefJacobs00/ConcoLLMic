@@ -1,37 +1,35 @@
-SLURM_JOB_ID: 11524425
+SLURM_JOB_ID: 11524441
 SLURM_JOB_USER: vsc36781
 SLURM_JOB_ACCOUNT: lp_distrinet_gent
 SLURM_JOB_NAME: concollmic
 SLURM_CLUSTER_NAME: mindwell
 SLURM_JOB_PARTITION: gpu_b200
 SLURM_NNODES: 1
-SLURM_NODELIST: r11g12
+SLURM_NODELIST: r11g17
 SLURM_JOB_CPUS_PER_NODE: 17
-SLURM_JOB_GPUS: 0
-Date: Mon Aug 24 15:07:10 CEST 2026
+SLURM_JOB_GPUS: 7
+Date: Mon Aug 24 15:29:10 CEST 2026
 Walltime: 00-00:30:00
 ========================================================================
-time="2026-08-24T15:07:10+02:00" level=warning msg="\"/\" is not a shared mount, this could cause issues or missing mounts with rootless containers"
-time="2026-08-24T15:07:10+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
-time="2026-08-24T15:07:10+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
-time="2026-08-24T15:07:10+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
-time="2026-08-24T15:07:10+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
-time="2026-08-24T15:07:10+02:00" level=warning msg="Failed to add pause process to systemd sandbox cgroup: dbus: couldn't determine address of session bus"
-time="2026-08-24T15:07:10+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
-time="2026-08-24T15:07:10+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
-time="2026-08-24T15:07:10+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
-time="2026-08-24T15:07:10+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
-waiting for vLLM (log: vllm-11524425.log) ...
-vLLM ready, starting bc
-time="2026-08-24T15:08:57+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
-time="2026-08-24T15:08:57+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
-time="2026-08-24T15:08:57+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
-time="2026-08-24T15:08:57+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+time="2026-08-24T15:29:10+02:00" level=warning msg="\"/\" is not a shared mount, this could cause issues or missing mounts with rootless containers"
+time="2026-08-24T15:29:11+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:29:11+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:29:11+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:29:11+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+time="2026-08-24T15:29:11+02:00" level=warning msg="Failed to add pause process to systemd sandbox cgroup: dbus: couldn't determine address of session bus"
+time="2026-08-24T15:29:11+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:29:11+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:29:11+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:29:11+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+time="2026-08-24T15:29:12+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:29:12+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:29:12+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:29:12+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
 [4m>>>> Executing external compose provider "/user/leuven/367/vsc36781/.local/bin/docker-compose". Please see podman-compose(1) for how to disable this message. <<<<
 
 [0m Image concolic:latest Building 
  Image concolic:latest Building 
-Sending build context to Docker daemon  524.5kBSending build context to Docker daemon   2.64MBSending build context to Docker daemon  5.279MBSending build context to Docker daemon   8.95MBSending build context to Docker daemon   14.2MBSending build context to Docker daemon  18.39MBSending build context to Docker daemon  22.59MBSending build context to Docker daemon  27.84MBSending build context to Docker daemon  29.94MBSending build context to Docker daemon  34.14MBSending build context to Docker daemon  37.82MBSending build context to Docker daemon  40.96MBSending build context to Docker daemon  44.63MBSending build context to Docker daemon  49.88MBSending build context to Docker daemon  55.12MBSending build context to Docker daemon  60.37MBSending build context to Docker daemon  65.09MBSending build context to Docker daemon  70.34MBSending build context to Docker daemon  75.06MBSending build context to Docker daemon   80.3MBSending build context to Docker daemon  85.03MBSending build context to Docker daemon   90.8MBSending build context to Docker daemon  96.04MBSending build context to Docker daemon  99.72MBSending build context to Docker daemon    105MBSending build context to Docker daemon  108.3MB
+Sending build context to Docker daemon  524.5kBSending build context to Docker daemon   3.16MBSending build context to Docker daemon  5.258MBSending build context to Docker daemon  9.454MBSending build context to Docker daemon  15.24MBSending build context to Docker daemon  17.86MBSending build context to Docker daemon  24.16MBSending build context to Docker daemon  28.89MBSending build context to Docker daemon  33.61MBSending build context to Docker daemon  37.81MBSending build context to Docker daemon  41.49MBSending build context to Docker daemon  46.21MBSending build context to Docker daemon  51.45MBSending build context to Docker daemon  56.69MBSending build context to Docker daemon  61.42MBSending build context to Docker daemon  66.14MBSending build context to Docker daemon  71.91MBSending build context to Docker daemon  77.15MBSending build context to Docker daemon  81.88MBSending build context to Docker daemon  87.12MBSending build context to Docker daemon  92.89MBSending build context to Docker daemon  98.14MBSending build context to Docker daemon  102.9MBSending build context to Docker daemon  108.1MBSending build context to Docker daemon  108.2MB
 STEP 1/11: FROM ubuntu:22.04
 Resolving %!q(<nil>) to docker.io (enforced by caller)
 Trying to pull docker.io/library/ubuntu:22.04...
@@ -40,27 +38,27 @@ Copying blob sha256:d544298cabd50e7c86bfef1e52b67f01db6b3a57bfecfe37a851873dee83
 Copying config sha256:4d0600e5088ac5da5119401c70292ea3a9d9dc71f76a234ad5390c1f6a8e5669
 Writing manifest to image destination
 STEP 2/11: ENV DEBIAN_FRONTEND=noninteractive
---> 71e8cf3685e0
+--> 4d3552bef773
 STEP 3/11: RUN apt-get update && apt-get install -y     build-essential     wget     curl     git     autoconf     libtool     pkg-config     cmake     python3     python3-pip     ca-certificates     lcov     clang-12     clang++-12     xxd     unzip     automake     build-essential     gcc     g++     zlib1g     make
-Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
-Get:2 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
-Get:3 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1315 kB]
-Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
-Get:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
-Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
-Get:7 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7658 kB]
-Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
-Get:9 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [84.1 kB]
-Get:10 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4251 kB]
-Get:11 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
-Get:12 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:1 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:3 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [4251 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1315 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [84.1 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [7658 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/restricted amd64 Packages [164 kB]
 Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1619 kB]
 Get:14 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [7959 kB]
-Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [92.7 kB]
-Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4588 kB]
-Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
-Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.8 kB]
-Fetched 48.0 MB in 1s (39.6 MB/s)
+Get:15 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [4588 kB]
+Get:16 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [92.7 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [82.8 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+Fetched 48.0 MB in 2s (28.2 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -416,7 +414,7 @@ Get:241 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 python3-pi
 Get:242 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 unzip amd64 6.0-26ubuntu3.2 [175 kB]
 Get:243 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgd-perl amd64 2.76-2ubuntu0.1 [138 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 405 MB in 6s (63.3 MB/s)
+Fetched 405 MB in 6s (67.5 MB/s)
 Selecting previously unselected package liblocale-gettext-perl.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4393 files and directories currently installed.)
 Preparing to unpack .../liblocale-gettext-perl_1.07-4build3_amd64.deb ...
@@ -1435,190 +1433,190 @@ Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...
 done.
---> e3da863a4d50
+--> 628ec20a3cc6
 STEP 4/11: RUN ln -sf /usr/bin/clang-12 /usr/bin/clang
---> 35e74216ba23
+--> c6145338efdc
 STEP 5/11: RUN ln -sf /usr/bin/clang++-12 /usr/bin/clang++
---> 4bfe2132d66c
+--> ab96f2aec9c2
 STEP 6/11: RUN pip3 install gcovr==6.0
 Collecting gcovr==6.0
   Downloading gcovr-6.0-py2.py3-none-any.whl (94 kB)
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.1/94.1 KB 5.9 MB/s eta 0:00:00
-Collecting jinja2
-  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 KB 14.8 MB/s eta 0:00:00
 Collecting lxml
   Downloading lxml-6.1.2-cp310-cp310-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 30.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 136.7 MB/s eta 0:00:00
 Requirement already satisfied: pygments in /usr/lib/python3/dist-packages (from gcovr==6.0) (2.11.2)
+Collecting jinja2
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 KB 139.7 MB/s eta 0:00:00
 Collecting MarkupSafe>=2.0
   Downloading markupsafe-3.0.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (20 kB)
 Installing collected packages: MarkupSafe, lxml, jinja2, gcovr
 Successfully installed MarkupSafe-3.0.3 gcovr-6.0 jinja2-3.1.6 lxml-6.1.2
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
---> da13bbd77944
+--> 5fb39458d429
 STEP 7/11: RUN git clone https://github.com/ConcoLLMic/ConcoLLMic /concolic-agent
 Cloning into '/concolic-agent'...
---> 08fc42be4529
+--> 0b927b8a18d7
 STEP 8/11: WORKDIR /concolic-agent
---> 384bc002056f
+--> 164176ffbe1b
 STEP 9/11: RUN pip install -r requirements.txt
 Collecting loguru==0.7.3
   Downloading loguru-0.7.3-py3-none-any.whl (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 KB 5.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.6/61.6 KB 4.2 MB/s eta 0:00:00
 Collecting rich==13.9.4
   Downloading rich-13.9.4-py3-none-any.whl (242 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 KB 15.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 242.4/242.4 KB 26.4 MB/s eta 0:00:00
 Collecting openai==2.9.0
   Downloading openai-2.9.0-py3-none-any.whl (1.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 18.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 MB 3.3 MB/s eta 0:00:00
 Collecting tenacity==8.2.3
   Downloading tenacity-8.2.3-py3-none-any.whl (24 kB)
 Collecting litellm==1.80.8
   Downloading litellm-1.80.8-py3-none-any.whl (11.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 61.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 158.8 MB/s eta 0:00:00
 Collecting httpx[socks]==0.27.2
   Downloading httpx-0.27.2-py3-none-any.whl (76 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.4/76.4 KB 111.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.4/76.4 KB 65.2 MB/s eta 0:00:00
 Collecting pre-commit==3.6.0
   Downloading pre_commit-3.6.0-py2.py3-none-any.whl (204 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 204.0/204.0 KB 149.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 204.0/204.0 KB 172.7 MB/s eta 0:00:00
 Collecting pydantic-core==2.27.2
   Downloading pydantic_core-2.27.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 124.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 258.5 MB/s eta 0:00:00
 Collecting pydantic-xml==2.14.3
   Downloading pydantic_xml-2.14.3-py3-none-any.whl (40 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 53.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 KB 21.4 MB/s eta 0:00:00
 Collecting pydantic==2.10.6
   Downloading pydantic-2.10.6-py3-none-any.whl (431 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 KB 134.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.7/431.7 KB 196.0 MB/s eta 0:00:00
 Collecting z3-solver==4.14.1.0
   Downloading z3_solver-4.14.1.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (29.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.5/29.5 MB 156.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.5/29.5 MB 167.7 MB/s eta 0:00:00
 Collecting pytest
   Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 386.5/386.5 KB 272.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 386.5/386.5 KB 191.3 MB/s eta 0:00:00
 Collecting pandas
   Downloading pandas-2.3.3-cp310-cp310-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (12.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 231.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 217.4 MB/s eta 0:00:00
 Collecting pyyaml==6.0.2
   Downloading PyYAML-6.0.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (751 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 KB 169.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 751.2/751.2 KB 117.3 MB/s eta 0:00:00
 Collecting ruamel.yaml==0.18.10
   Downloading ruamel.yaml-0.18.10-py3-none-any.whl (117 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.7/117.7 KB 94.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.7/117.7 KB 150.8 MB/s eta 0:00:00
 Collecting dill==0.3.9
   Downloading dill-0.3.9-py3-none-any.whl (119 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.4/119.4 KB 136.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.4/119.4 KB 69.1 MB/s eta 0:00:00
 Collecting anthropic==0.75.0
   Downloading anthropic-0.75.0-py3-none-any.whl (388 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 388.2/388.2 KB 118.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 388.2/388.2 KB 204.5 MB/s eta 0:00:00
 Collecting transformers==4.37.2
   Downloading transformers-4.37.2-py3-none-any.whl (8.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 176.1 MB/s eta 0:00:00
-Collecting pygments<3.0.0,>=2.13.0
-  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 270.6 MB/s eta 0:00:00
-Collecting markdown-it-py>=2.2.0
-  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 KB 156.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 176.7 MB/s eta 0:00:00
 Collecting typing-extensions<5.0,>=4.0.0
   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 KB 56.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 KB 32.7 MB/s eta 0:00:00
+Collecting pygments<3.0.0,>=2.13.0
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 193.4 MB/s eta 0:00:00
+Collecting markdown-it-py>=2.2.0
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.7/91.7 KB 98.1 MB/s eta 0:00:00
+Collecting tqdm>4
+  Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 KB 147.4 MB/s eta 0:00:00
+Collecting anyio<5,>=3.5.0
+  Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.8/125.8 KB 208.5 MB/s eta 0:00:00
 Collecting sniffio
   Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
 Collecting jiter<1,>=0.10.0
   Downloading jiter-0.16.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (348 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.3/348.3 KB 147.5 MB/s eta 0:00:00
-Collecting anyio<5,>=3.5.0
-  Downloading anyio-4.14.2-py3-none-any.whl (125 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.8/125.8 KB 160.4 MB/s eta 0:00:00
-Collecting tqdm>4
-  Downloading tqdm-4.70.0-py3-none-any.whl (80 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 KB 145.9 MB/s eta 0:00:00
-Collecting distro<2,>=1.7.0
-  Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.3/348.3 KB 125.8 MB/s eta 0:00:00
 Collecting httpx<1,>=0.23.0
   Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 KB 95.7 MB/s eta 0:00:00
-Collecting grpcio<1.68.0,>=1.62.3
-  Downloading grpcio-1.67.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 208.3 MB/s eta 0:00:00
-Collecting aiohttp>=3.10
-  Downloading aiohttp-3.14.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 273.4 MB/s eta 0:00:00
-Collecting python-dotenv>=0.2.0
-  Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
-Collecting jsonschema<5.0.0,>=4.22.0
-  Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 KB 163.7 MB/s eta 0:00:00
-Collecting tiktoken>=0.7.0
-  Downloading tiktoken-0.14.0-cp310-cp310-manylinux_2_28_x86_64.whl (1.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 256.1 MB/s eta 0:00:00
-Requirement already satisfied: jinja2<4.0.0,>=3.1.2 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.1.6)
-Collecting fastuuid>=0.13.0
-  Downloading fastuuid-0.14.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.0/280.0 KB 241.8 MB/s eta 0:00:00
-Collecting click
-  Downloading click-8.4.2-py3-none-any.whl (119 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.2/119.2 KB 210.6 MB/s eta 0:00:00
-Collecting importlib-metadata>=6.8.0
-  Downloading importlib_metadata-9.0.0-py3-none-any.whl (27 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 KB 57.9 MB/s eta 0:00:00
+Collecting distro<2,>=1.7.0
+  Downloading distro-1.9.0-py3-none-any.whl (20 kB)
 Collecting tokenizers
   Downloading tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 220.5 MB/s eta 0:00:00
-Collecting idna
-  Downloading idna-3.19-py3-none-any.whl (68 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 KB 119.2 MB/s eta 0:00:00
-Collecting httpcore==1.*
-  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 KB 97.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 178.0 MB/s eta 0:00:00
+Collecting aiohttp>=3.10
+  Downloading aiohttp-3.14.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (1.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 131.3 MB/s eta 0:00:00
+Collecting importlib-metadata>=6.8.0
+  Downloading importlib_metadata-9.0.0-py3-none-any.whl (27 kB)
+Collecting fastuuid>=0.13.0
+  Downloading fastuuid-0.14.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (280 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 280.0/280.0 KB 212.1 MB/s eta 0:00:00
+Collecting click
+  Downloading click-8.4.2-py3-none-any.whl (119 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.2/119.2 KB 113.0 MB/s eta 0:00:00
+Requirement already satisfied: jinja2<4.0.0,>=3.1.2 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.1.6)
+Collecting jsonschema<5.0.0,>=4.22.0
+  Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 KB 70.4 MB/s eta 0:00:00
+Collecting grpcio<1.68.0,>=1.62.3
+  Downloading grpcio-1.67.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 122.9 MB/s eta 0:00:00
+Collecting python-dotenv>=0.2.0
+  Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Collecting tiktoken>=0.7.0
+  Downloading tiktoken-0.14.0-cp310-cp310-manylinux_2_28_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 182.4 MB/s eta 0:00:00
 Collecting certifi
   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 KB 175.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 KB 118.4 MB/s eta 0:00:00
+Collecting idna
+  Downloading idna-3.19-py3-none-any.whl (68 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 KB 123.0 MB/s eta 0:00:00
+Collecting httpcore==1.*
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 KB 83.9 MB/s eta 0:00:00
 Collecting socksio==1.*
   Downloading socksio-1.0.0-py3-none-any.whl (12 kB)
 Collecting virtualenv>=20.10.0
   Downloading virtualenv-21.7.4-py3-none-any.whl (5.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 273.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 180.9 MB/s eta 0:00:00
 Collecting nodeenv>=0.11.1
   Downloading nodeenv-1.10.0-py2.py3-none-any.whl (23 kB)
-Collecting cfgv>=2.0.0
-  Downloading cfgv-3.5.0-py2.py3-none-any.whl (7.4 kB)
 Collecting identify>=1.0.0
   Downloading identify-2.6.19-py2.py3-none-any.whl (99 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.4/99.4 KB 173.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.4/99.4 KB 46.7 MB/s eta 0:00:00
+Collecting cfgv>=2.0.0
+  Downloading cfgv-3.5.0-py2.py3-none-any.whl (7.4 kB)
 Collecting annotated-types>=0.6.0
   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
 Collecting ruamel.yaml.clib>=0.2.7
   Downloading ruamel_yaml_clib-0.2.15-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (731 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.3/731.3 KB 337.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 731.3/731.3 KB 264.6 MB/s eta 0:00:00
 Collecting docstring-parser<1,>=0.15
   Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
-Collecting regex!=2019.12.17
-  Downloading regex-2026.7.19-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (793 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.5/793.5 KB 270.9 MB/s eta 0:00:00
-Collecting filelock
-  Downloading filelock-3.32.4-py3-none-any.whl (99 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.9/99.9 KB 137.2 MB/s eta 0:00:00
-Collecting requests
-  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 KB 136.4 MB/s eta 0:00:00
 Collecting packaging>=20.0
   Downloading packaging-26.3-py3-none-any.whl (129 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 KB 167.6 MB/s eta 0:00:00
-Collecting huggingface-hub<1.0,>=0.19.3
-  Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 KB 174.9 MB/s eta 0:00:00
-Collecting numpy>=1.17
-  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 230.3 MB/s eta 0:00:00
-Collecting safetensors>=0.4.1
-  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 KB 323.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 KB 76.4 MB/s eta 0:00:00
 Collecting tokenizers
   Downloading tokenizers-0.15.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 220.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 180.1 MB/s eta 0:00:00
+Collecting regex!=2019.12.17
+  Downloading regex-2026.7.19-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (793 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.5/793.5 KB 247.2 MB/s eta 0:00:00
+Collecting safetensors>=0.4.1
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 KB 177.9 MB/s eta 0:00:00
+Collecting filelock
+  Downloading filelock-3.32.4-py3-none-any.whl (99 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.9/99.9 KB 174.2 MB/s eta 0:00:00
+Collecting huggingface-hub<1.0,>=0.19.3
+  Downloading huggingface_hub-0.36.2-py3-none-any.whl (566 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 566.4/566.4 KB 208.9 MB/s eta 0:00:00
+Collecting requests
+  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.1/73.1 KB 140.6 MB/s eta 0:00:00
+Collecting numpy>=1.17
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 175.0 MB/s eta 0:00:00
 Collecting h11>=0.16
   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
 Collecting exceptiongroup>=1
@@ -1629,52 +1627,52 @@ Collecting tomli>=1
   Downloading tomli-2.4.1-py3-none-any.whl (14 kB)
 Collecting iniconfig>=1.0.1
   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
-Collecting tzdata>=2022.7
-  Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 KB 379.0 MB/s eta 0:00:00
-Collecting pytz>=2020.1
-  Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 508.3/508.3 KB 312.4 MB/s eta 0:00:00
 Collecting python-dateutil>=2.8.2
   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 KB 306.9 MB/s eta 0:00:00
-Collecting aiosignal>=1.4.0
-  Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
-Collecting aiohappyeyeballs>=2.5.0
-  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
-Collecting async-timeout<6.0,>=4.0
-  Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
-Collecting multidict<7.0,>=4.5
-  Downloading multidict-6.7.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (243 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.3/243.3 KB 192.7 MB/s eta 0:00:00
-Collecting yarl<2.0,>=1.17.0
-  Downloading yarl-1.24.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (110 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.8/110.8 KB 91.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 KB 297.0 MB/s eta 0:00:00
+Collecting pytz>=2020.1
+  Downloading pytz-2026.3.post1-py2.py3-none-any.whl (508 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 508.3/508.3 KB 208.7 MB/s eta 0:00:00
+Collecting tzdata>=2022.7
+  Downloading tzdata-2026.3-py2.py3-none-any.whl (348 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 348.2/348.2 KB 210.7 MB/s eta 0:00:00
 Collecting propcache>=0.2.0
   Downloading propcache-0.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (60 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.1/60.1 KB 111.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.1/60.1 KB 111.3 MB/s eta 0:00:00
 Collecting frozenlist>=1.1.1
   Downloading frozenlist-1.8.0-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (219 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.5/219.5 KB 195.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 219.5/219.5 KB 140.1 MB/s eta 0:00:00
 Collecting attrs>=17.3.0
   Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 KB 112.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 KB 127.3 MB/s eta 0:00:00
+Collecting aiohappyeyeballs>=2.5.0
+  Downloading aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Collecting aiosignal>=1.4.0
+  Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Collecting multidict<7.0,>=4.5
+  Downloading multidict-6.7.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (243 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.3/243.3 KB 102.4 MB/s eta 0:00:00
+Collecting yarl<2.0,>=1.17.0
+  Downloading yarl-1.24.5-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (110 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.8/110.8 KB 108.5 MB/s eta 0:00:00
+Collecting async-timeout<6.0,>=4.0
+  Downloading async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
 Collecting fsspec>=2023.5.0
   Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.6/206.6 KB 54.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 206.6/206.6 KB 94.6 MB/s eta 0:00:00
 Collecting hf-xet<2.0.0,>=1.1.3
   Downloading hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 103.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.5/4.5 MB 53.6 MB/s eta 0:00:00
 Collecting zipp>=3.20
   Downloading zipp-4.1.0-py3-none-any.whl (10 kB)
 Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2<4.0.0,>=3.1.2->litellm==1.80.8->-r requirements.txt (line 5)) (3.0.3)
-Collecting jsonschema-specifications>=2023.03.6
-  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
 Collecting referencing>=0.28.4
   Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting jsonschema-specifications>=2023.03.6
+  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
 Collecting rpds-py>=0.25.0
   Downloading rpds_py-0.30.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 390.5/390.5 KB 180.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 390.5/390.5 KB 198.2 MB/s eta 0:00:00
 Collecting mdurl~=0.1
   Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
 Collecting six>=1.5
@@ -1683,15 +1681,15 @@ Collecting python-discovery>=1.4.2
   Downloading python_discovery-1.5.2-py3-none-any.whl (38 kB)
 Collecting distlib<1,>=0.3.7
   Downloading distlib-0.4.3-py2.py3-none-any.whl (470 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 470.6/470.6 KB 386.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 470.6/470.6 KB 212.3 MB/s eta 0:00:00
 Collecting platformdirs<5,>=3.9.1
   Downloading platformdirs-4.11.3-py3-none-any.whl (23 kB)
-Collecting urllib3<3,>=1.26
-  Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 KB 133.9 MB/s eta 0:00:00
 Collecting charset_normalizer<4,>=2
   Downloading charset_normalizer-3.5.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (261 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.6/261.6 KB 251.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 261.6/261.6 KB 142.2 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.26
+  Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 KB 155.2 MB/s eta 0:00:00
 Installing collected packages: z3-solver, pytz, distlib, zipp, urllib3, tzdata, typing-extensions, tqdm, tomli, tenacity, socksio, sniffio, six, safetensors, ruamel.yaml.clib, rpds-py, regex, pyyaml, python-dotenv, pygments, propcache, pluggy, platformdirs, packaging, numpy, nodeenv, mdurl, loguru, jiter, iniconfig, idna, identify, hf-xet, h11, grpcio, fsspec, frozenlist, filelock, fastuuid, docstring-parser, distro, dill, click, charset_normalizer, cfgv, certifi, attrs, async-timeout, annotated-types, aiohappyeyeballs, ruamel.yaml, requests, referencing, python-discovery, python-dateutil, pydantic-core, multidict, markdown-it-py, importlib-metadata, httpcore, exceptiongroup, aiosignal, yarl, virtualenv, tiktoken, rich, pytest, pydantic, pandas, jsonschema-specifications, huggingface-hub, anyio, tokenizers, pydantic-xml, pre-commit, jsonschema, httpx, aiohttp, transformers, openai, anthropic, litellm
   Attempting uninstall: pyyaml
     Found existing installation: PyYAML 5.4.1
@@ -1703,20 +1701,20 @@ Installing collected packages: z3-solver, pytz, distlib, zipp, urllib3, tzdata, 
     Can't uninstall 'Pygments'. No files were found to uninstall.
 Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 annotated-types-0.8.0 anthropic-0.75.0 anyio-4.14.2 async-timeout-5.0.1 attrs-26.1.0 certifi-2026.7.22 cfgv-3.5.0 charset_normalizer-3.5.1 click-8.4.2 dill-0.3.9 distlib-0.4.3 distro-1.9.0 docstring-parser-0.18.0 exceptiongroup-1.3.1 fastuuid-0.14.0 filelock-3.32.4 frozenlist-1.8.0 fsspec-2026.7.0 grpcio-1.67.1 h11-0.16.0 hf-xet-1.6.0 httpcore-1.0.9 httpx-0.27.2 huggingface-hub-0.36.2 identify-2.6.19 idna-3.19 importlib-metadata-9.0.0 iniconfig-2.3.0 jiter-0.16.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 litellm-1.80.8 loguru-0.7.3 markdown-it-py-4.2.0 mdurl-0.1.2 multidict-6.7.1 nodeenv-1.10.0 numpy-2.2.6 openai-2.9.0 packaging-26.3 pandas-2.3.3 platformdirs-4.11.3 pluggy-1.6.0 pre-commit-3.6.0 propcache-0.5.2 pydantic-2.10.6 pydantic-core-2.27.2 pydantic-xml-2.14.3 pygments-2.21.0 pytest-9.1.1 python-dateutil-2.9.0.post0 python-discovery-1.5.2 python-dotenv-1.2.3 pytz-2026.3.post1 pyyaml-6.0.2 referencing-0.37.0 regex-2026.7.19 requests-2.34.2 rich-13.9.4 rpds-py-0.30.0 ruamel.yaml-0.18.10 ruamel.yaml.clib-0.2.15 safetensors-0.8.0 six-1.17.0 sniffio-1.3.1 socksio-1.0.0 tenacity-8.2.3 tiktoken-0.14.0 tokenizers-0.15.2 tomli-2.4.1 tqdm-4.70.0 transformers-4.37.2 typing-extensions-4.16.0 tzdata-2026.3 urllib3-2.7.0 virtualenv-21.7.4 yarl-1.24.5 z3-solver-4.14.1.0 zipp-4.1.0
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
---> 4f3444b19ab7
+--> 01d60940bedd
 STEP 10/11: RUN pip install -r requirements-dev.txt
 Collecting black==24.4.0
   Downloading black-24.4.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 16.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 17.4 MB/s eta 0:00:00
 Collecting isort==5.13.2
   Downloading isort-5.13.2-py3-none-any.whl (92 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.3/92.3 KB 44.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.3/92.3 KB 33.7 MB/s eta 0:00:00
 Collecting pyupgrade==3.15.2
   Downloading pyupgrade-3.15.2-py2.py3-none-any.whl (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 59.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 KB 40.0 MB/s eta 0:00:00
 Collecting ruff==0.3.7
   Downloading ruff-0.3.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (8.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 54.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.9/8.9 MB 53.6 MB/s eta 0:00:00
 Collecting pyright==1.1.364
   Downloading pyright-1.1.364-py3-none-any.whl (18 kB)
 Requirement already satisfied: ruamel.yaml==0.18.10 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 6)) (0.18.10)
@@ -1724,73 +1722,73 @@ Collecting venn==0.1.3
   Downloading venn-0.1.3.tar.gz (19 kB)
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
+Requirement already satisfied: tomli>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (2.4.1)
+Requirement already satisfied: typing-extensions>=4.0.1 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.16.0)
+Requirement already satisfied: packaging>=22.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (26.3)
 Collecting pathspec>=0.9.0
   Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 KB 56.0 MB/s eta 0:00:00
-Requirement already satisfied: typing-extensions>=4.0.1 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.16.0)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.3/57.3 KB 90.6 MB/s eta 0:00:00
 Requirement already satisfied: platformdirs>=2 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.11.3)
-Requirement already satisfied: packaging>=22.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (26.3)
 Requirement already satisfied: click>=8.0.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (8.4.2)
 Collecting mypy-extensions>=0.4.3
   Downloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)
-Requirement already satisfied: tomli>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (2.4.1)
 Collecting tokenize-rt>=5.2.0
   Downloading tokenize_rt-6.2.0-py2.py3-none-any.whl (6.0 kB)
 Requirement already satisfied: nodeenv>=1.6.0 in /usr/local/lib/python3.10/dist-packages (from pyright==1.1.364->-r requirements-dev.txt (line 5)) (1.10.0)
 Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /usr/local/lib/python3.10/dist-packages (from ruamel.yaml==0.18.10->-r requirements-dev.txt (line 6)) (0.2.15)
 Collecting matplotlib
   Downloading matplotlib-3.10.9-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 123.3 MB/s eta 0:00:00
-Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.2.6)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.8/8.8 MB 68.2 MB/s eta 0:00:00
 Collecting fonttools>=4.22.0
   Downloading fonttools-4.63.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 152.6 MB/s eta 0:00:00
-Collecting pillow>=8
-  Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 212.7 MB/s eta 0:00:00
-Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.9.0.post0)
-Collecting kiwisolver>=1.3.1
-  Downloading kiwisolver-1.5.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 231.8 MB/s eta 0:00:00
-Collecting contourpy>=1.0.1
-  Downloading contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 325.0/325.0 KB 280.3 MB/s eta 0:00:00
-Collecting cycler>=0.10
-  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 176.5 MB/s eta 0:00:00
 Collecting pyparsing>=3
   Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.8/122.8 KB 152.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.8/122.8 KB 133.5 MB/s eta 0:00:00
+Collecting pillow>=8
+  Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 167.5 MB/s eta 0:00:00
+Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.9.0.post0)
+Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.2.6)
+Collecting kiwisolver>=1.3.1
+  Downloading kiwisolver-1.5.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 226.3 MB/s eta 0:00:00
+Collecting cycler>=0.10
+  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.3.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (325 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 325.0/325.0 KB 354.9 MB/s eta 0:00:00
 Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.7->matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.17.0)
 Building wheels for collected packages: venn
   Building wheel for venn (setup.py): started
   Building wheel for venn (setup.py): finished with status 'done'
-  Created wheel for venn: filename=venn-0.1.3-py3-none-any.whl size=19716 sha256=7eddc6d140e0a1cd34700107fc66f240f750342aa7dfd20b57210b482414fc6a
+  Created wheel for venn: filename=venn-0.1.3-py3-none-any.whl size=19716 sha256=5117fd8711e9e14fbdbdeefc2879a67e0449047a4806e9329172a7b585a34a17
   Stored in directory: /root/.cache/pip/wheels/9c/ce/43/705b4a04cd822891d1d7a4c43fc444b4798978e72c79528c5f
 Successfully built venn
 Installing collected packages: tokenize-rt, ruff, pyright, pyparsing, pillow, pathspec, mypy-extensions, kiwisolver, isort, fonttools, cycler, contourpy, pyupgrade, matplotlib, black, venn
 Successfully installed black-24.4.0 contourpy-1.3.2 cycler-0.12.1 fonttools-4.63.0 isort-5.13.2 kiwisolver-1.5.0 matplotlib-3.10.9 mypy-extensions-1.1.0 pathspec-1.1.1 pillow-12.3.0 pyparsing-3.3.2 pyright-1.1.364 pyupgrade-3.15.2 ruff-0.3.7 tokenize-rt-6.2.0 venn-0.1.3
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
---> 77effcbc91d0
+--> 33d981b4bda1
 STEP 11/11: LABEL "com.docker.compose.image.builder"="classic"
 COMMIT docker.io/library/concolic:latest
---> 4683e1795a3f
+--> b9e25a6a71a8
 Successfully tagged docker.io/library/concolic:latest
-4683e1795a3f7357cfc0f18f30ac4b0d6783081b869f25bfecabf611866e7914
-Successfully built 4683e1795a3f
+b9e25a6a71a8aa1a4cc95dd4e2082c4f0d152e04fe4e43b6abe34af0febe80ec
+Successfully built b9e25a6a71a8
 Successfully tagged concolic:latest
  Image concolic:latest Built 
  Image concolic:latest Built 
  Image bc-concolic:latest Building 
  Image bc-concolic:latest Building 
-Sending build context to Docker daemon  524.4kBSending build context to Docker daemon  635.2kB
+Sending build context to Docker daemon  524.4kBSending build context to Docker daemon  524.9kB
 STEP 1/21: FROM concolic AS bc
 STEP 2/21: USER root
---> c489a614d212
+--> 0584b5059d39
 STEP 3/21: ENV DEBIAN_FRONTEND=noninteractive
---> 215af5d90e1f
+--> 6229f1ebbdb5
 STEP 4/21: RUN apt-get update && apt-get install -y     texinfo &&     rm -rf /var/lib/apt/lists/*
-Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
-Hit:2 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:1 http://security.ubuntu.com/ubuntu jammy-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease
 Hit:3 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
 Hit:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
 Reading package lists...
@@ -1870,7 +1868,7 @@ Get:37 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxml-sax-expat-perl a
 Get:38 http://archive.ubuntu.com/ubuntu jammy/universe amd64 texinfo amd64 6.8-4build1 [1423 kB]
 Get:39 http://archive.ubuntu.com/ubuntu jammy/main amd64 libauthen-sasl-perl all 2.1600-1.1 [43.1 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 3787 kB in 1s (6474 kB/s)
+Fetched 3787 kB in 1s (6306 kB/s)
 Selecting previously unselected package tex-common.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 36092 files and directories currently installed.)
 Preparing to unpack .../00-tex-common_6.17_all.deb ...
@@ -2040,40 +2038,40 @@ Setting up libxml-sax-expat-perl (0.51-1) ...
 update-perl-sax-parsers: Registering Perl SAX parser XML::SAX::Expat with priority 50...
 update-perl-sax-parsers: Updating overall Perl SAX parser modules info file...
 Replacing config file /etc/perl/XML/SAX/ParserDetails.ini with new version
---> e0c0add72043
+--> aec1f8dd97dc
 STEP 5/21: WORKDIR /
---> 2e7dd49b2904
+--> c9aad2844d71
 STEP 6/21: RUN wget https://ftp.gnu.org/gnu/bc/bc-1.08.1.tar.gz
---2026-08-24 13:10:04--  https://ftp.gnu.org/gnu/bc/bc-1.08.1.tar.gz
+--2026-08-24 13:30:24--  https://ftp.gnu.org/gnu/bc/bc-1.08.1.tar.gz
 Resolving ftp.gnu.org (ftp.gnu.org)... 2001:470:142:3::b, 209.51.188.20
 Connecting to ftp.gnu.org (ftp.gnu.org)|2001:470:142:3::b|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 458434 (448K) [application/x-gzip]
 Saving to: 'bc-1.08.1.tar.gz'
 
-     0K .......... .......... .......... .......... .......... 11%  329K 1s
-    50K .......... .......... .......... .......... .......... 22%  682K 1s
-   100K .......... .......... .......... .......... .......... 33% 22.2M 0s
-   150K .......... .......... .......... .......... .......... 44% 1.40M 0s
-   200K .......... .......... .......... .......... .......... 55% 1.30M 0s
-   250K .......... .......... .......... .......... .......... 67% 43.9M 0s
-   300K .......... .......... .......... .......... .......... 78% 45.1M 0s
-   350K .......... .......... .......... .......... .......... 89% 1.25M 0s
-   400K .......... .......... .......... .......... .......   100% 1.49M=0.4s
+     0K .......... .......... .......... .......... .......... 11%  339K 1s
+    50K .......... .......... .......... .......... .......... 22% 1.01M 1s
+   100K .......... .......... .......... .......... .......... 33%  675K 1s
+   150K .......... .......... .......... .......... .......... 44% 26.5M 0s
+   200K .......... .......... .......... .......... .......... 55% 1.88M 0s
+   250K .......... .......... .......... .......... .......... 67% 49.2M 0s
+   300K .......... .......... .......... .......... .......... 78% 1.06M 0s
+   350K .......... .......... .......... .......... .......... 89% 47.3M 0s
+   400K .......... .......... .......... .......... .......   100% 1.86M=0.4s
 
-2026-08-24 13:10:05 (1.17 MB/s) - 'bc-1.08.1.tar.gz' saved [458434/458434]
+2026-08-24 13:30:25 (1.18 MB/s) - 'bc-1.08.1.tar.gz' saved [458434/458434]
 
---> a59b6471d713
+--> 1e727c27d2ca
 STEP 7/21: RUN tar -xzf bc-1.08.1.tar.gz
---> 3b12f1d585c0
+--> f10978be5a07
 STEP 8/21: RUN mv bc-1.08.1 /bc-gcov
---> f7b87179fb2c
+--> 2123b76c0237
 STEP 9/21: COPY ./bc-1.08.1-instr.tar.gz ./bc-1.08.1-instr.tar.gz
---> 5e9af97c8c5a
+--> 205e8d4fb77a
 STEP 10/21: RUN tar -xzf bc-1.08.1-instr.tar.gz && mv bc-1.08.1-instr /bc-instr
---> a812c88e7a50
+--> 48c1865b69ae
 STEP 11/21: WORKDIR /bc-gcov
---> 4572c1622e88
+--> 88e72d160cfc
 STEP 12/21: RUN CC=gcc CXX=g++ ./configure
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether sleep supports fractional seconds... yes
@@ -2143,7 +2141,7 @@ config.status: creating doc/Makefile
 config.status: creating doc/texi-ver.incl
 config.status: creating config.h
 config.status: executing depfiles commands
---> 6812254c0854
+--> 9e3abbf0cf46
 STEP 13/21: RUN CC=gcc CXX=g++ make AM_CFLAGS="-fprofile-arcs -ftest-coverage"
 make  all-recursive
 make[1]: Entering directory '/bc-gcov'
@@ -2258,9 +2256,9 @@ make[2]: Entering directory '/bc-gcov'
 make[2]: Nothing to be done for 'all-am'.
 make[2]: Leaving directory '/bc-gcov'
 make[1]: Leaving directory '/bc-gcov'
---> 71fffedec398
+--> 86d6e97da0e1
 STEP 14/21: WORKDIR /bc-instr
---> 31e09f289c08
+--> 851ed9d824b1
 STEP 15/21: RUN CC=gcc CXX=g++ ./configure
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether sleep supports fractional seconds... yes
@@ -2330,7 +2328,7 @@ config.status: creating doc/Makefile
 config.status: creating doc/texi-ver.incl
 config.status: creating config.h
 config.status: executing depfiles commands
---> a8b20858fc40
+--> d6a839b6539e
 STEP 16/21: RUN CC=gcc CXX=g++ make
 make  all-recursive
 make[1]: Entering directory '/bc-instr'
@@ -2445,28 +2443,30 @@ make[2]: Entering directory '/bc-instr'
 make[2]: Nothing to be done for 'all-am'.
 make[2]: Leaving directory '/bc-instr'
 make[1]: Leaving directory '/bc-instr'
---> 5ca6d27e3a9f
+--> 42e7d1393bdb
 STEP 17/21: COPY ./seed_execs /seed_execs
---> 008fea0c4bb6
+--> d9786e5d963d
 STEP 18/21: COPY ./run.sh /run.sh
---> 63f5086a602e
+--> be5196c87618
 STEP 19/21: COPY ./coverage.sh /coverage.sh
---> 51cfbd883f58
+--> 53500bf3a546
 STEP 20/21: CMD ["/bin/bash"]
---> 9f76a041cc2f
+--> 36c07a85e97e
 STEP 21/21: LABEL "com.docker.compose.image.builder"="classic"
 COMMIT docker.io/library/bc-concolic:latest
---> 418354de54db
+--> b4a8b6d465a8
 Successfully tagged docker.io/library/bc-concolic:latest
-418354de54dbd3663b234ebad7297f6dbfc959c0c8aeacdcc4774df35754c61f
-Successfully built 418354de54db
+b4a8b6d465a83de5f8a8b1808dadd6832519573715813d8cb658f761560394b4
+Successfully built b4a8b6d465a8
 Successfully tagged bc-concolic:latest
  Image bc-concolic:latest Built 
  Image bc-concolic:latest Built 
-time="2026-08-24T15:10:13+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
-time="2026-08-24T15:10:13+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
-time="2026-08-24T15:10:13+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
-time="2026-08-24T15:10:13+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
+waiting for vLLM (log: vllm-11524441.log) ...
+vLLM ready, starting bc
+time="2026-08-24T15:34:03+02:00" level=warning msg="The cgroupv2 manager is set to systemd but there is no systemd user session available"
+time="2026-08-24T15:34:03+02:00" level=warning msg="For using systemd, you may need to log in using a user session"
+time="2026-08-24T15:34:03+02:00" level=warning msg="Alternatively, you can enable lingering with: `loginctl enable-linger 2536781` (possibly as root)"
+time="2026-08-24T15:34:03+02:00" level=warning msg="Falling back to --cgroup-manager=cgroupfs"
 [4m>>>> Executing external compose provider "/user/leuven/367/vsc36781/.local/bin/docker-compose". Please see podman-compose(1) for how to disable this message. <<<<
 
 [0m Container concollmic-local-bc-concolic-1 Creating 
@@ -2496,72 +2496,72 @@ bc-concolic-1  | Requirement already satisfied: ruamel.yaml==0.18.10 in /usr/loc
 bc-concolic-1  | Requirement already satisfied: dill==0.3.9 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 16)) (0.3.9)
 bc-concolic-1  | Requirement already satisfied: anthropic==0.75.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 17)) (0.75.0)
 bc-concolic-1  | Requirement already satisfied: transformers==4.37.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements.txt (line 18)) (4.37.2)
+bc-concolic-1  | Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (4.2.0)
 bc-concolic-1  | Requirement already satisfied: typing-extensions<5.0,>=4.0.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (4.16.0)
 bc-concolic-1  | Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (2.21.0)
-bc-concolic-1  | Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.10/dist-packages (from rich==13.9.4->-r requirements.txt (line 2)) (4.2.0)
+bc-concolic-1  | Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (0.16.0)
+bc-concolic-1  | Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (1.3.1)
 bc-concolic-1  | Requirement already satisfied: anyio<5,>=3.5.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (4.14.2)
 bc-concolic-1  | Requirement already satisfied: tqdm>4 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (4.70.0)
-bc-concolic-1  | Requirement already satisfied: jiter<1,>=0.10.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (0.16.0)
 bc-concolic-1  | Requirement already satisfied: distro<2,>=1.7.0 in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (1.9.0)
-bc-concolic-1  | Requirement already satisfied: sniffio in /usr/local/lib/python3.10/dist-packages (from openai==2.9.0->-r requirements.txt (line 3)) (1.3.1)
-bc-concolic-1  | Requirement already satisfied: click in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (8.4.2)
-bc-concolic-1  | Requirement already satisfied: python-dotenv>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.2.3)
-bc-concolic-1  | Requirement already satisfied: tokenizers in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.15.2)
-bc-concolic-1  | Requirement already satisfied: jsonschema<5.0.0,>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (4.26.0)
-bc-concolic-1  | Requirement already satisfied: grpcio<1.68.0,>=1.62.3 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.67.1)
 bc-concolic-1  | Requirement already satisfied: jinja2<4.0.0,>=3.1.2 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.1.6)
+bc-concolic-1  | Requirement already satisfied: grpcio<1.68.0,>=1.62.3 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.67.1)
+bc-concolic-1  | Requirement already satisfied: jsonschema<5.0.0,>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (4.26.0)
+bc-concolic-1  | Requirement already satisfied: click in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (8.4.2)
+bc-concolic-1  | Requirement already satisfied: aiohttp>=3.10 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.14.3)
+bc-concolic-1  | Requirement already satisfied: python-dotenv>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (1.2.3)
+bc-concolic-1  | Requirement already satisfied: fastuuid>=0.13.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.14.0)
 bc-concolic-1  | Requirement already satisfied: tiktoken>=0.7.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.14.0)
 bc-concolic-1  | Requirement already satisfied: importlib-metadata>=6.8.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (9.0.0)
-bc-concolic-1  | Requirement already satisfied: fastuuid>=0.13.0 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.14.0)
-bc-concolic-1  | Requirement already satisfied: aiohttp>=3.10 in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (3.14.3)
+bc-concolic-1  | Requirement already satisfied: tokenizers in /usr/local/lib/python3.10/dist-packages (from litellm==1.80.8->-r requirements.txt (line 5)) (0.15.2)
 bc-concolic-1  | Requirement already satisfied: idna in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (3.19)
 bc-concolic-1  | Requirement already satisfied: certifi in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (2026.7.22)
 bc-concolic-1  | Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (1.0.9)
 bc-concolic-1  | Requirement already satisfied: socksio==1.* in /usr/local/lib/python3.10/dist-packages (from httpx[socks]==0.27.2->-r requirements.txt (line 6)) (1.0.0)
-bc-concolic-1  | Requirement already satisfied: virtualenv>=20.10.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (21.7.4)
-bc-concolic-1  | Requirement already satisfied: identify>=1.0.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (2.6.19)
 bc-concolic-1  | Requirement already satisfied: cfgv>=2.0.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (3.5.0)
 bc-concolic-1  | Requirement already satisfied: nodeenv>=0.11.1 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (1.10.0)
+bc-concolic-1  | Requirement already satisfied: virtualenv>=20.10.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (21.7.4)
+bc-concolic-1  | Requirement already satisfied: identify>=1.0.0 in /usr/local/lib/python3.10/dist-packages (from pre-commit==3.6.0->-r requirements.txt (line 7)) (2.6.19)
 bc-concolic-1  | Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.10/dist-packages (from pydantic==2.10.6->-r requirements.txt (line 10)) (0.8.0)
 bc-concolic-1  | Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /usr/local/lib/python3.10/dist-packages (from ruamel.yaml==0.18.10->-r requirements.txt (line 15)) (0.2.15)
 bc-concolic-1  | Requirement already satisfied: docstring-parser<1,>=0.15 in /usr/local/lib/python3.10/dist-packages (from anthropic==0.75.0->-r requirements.txt (line 17)) (0.18.0)
-bc-concolic-1  | Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (3.32.4)
-bc-concolic-1  | Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (0.36.2)
-bc-concolic-1  | Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.34.2)
-bc-concolic-1  | Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.2.6)
 bc-concolic-1  | Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (26.3)
+bc-concolic-1  | Requirement already satisfied: huggingface-hub<1.0,>=0.19.3 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (0.36.2)
+bc-concolic-1  | Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.2.6)
 bc-concolic-1  | Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2026.7.19)
 bc-concolic-1  | Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (0.8.0)
+bc-concolic-1  | Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (2.34.2)
+bc-concolic-1  | Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers==4.37.2->-r requirements.txt (line 18)) (3.32.4)
 bc-concolic-1  | Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.10/dist-packages (from httpcore==1.*->httpx[socks]==0.27.2->-r requirements.txt (line 6)) (0.16.0)
-bc-concolic-1  | Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (2.4.1)
 bc-concolic-1  | Requirement already satisfied: pluggy<2,>=1.5 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (1.6.0)
+bc-concolic-1  | Requirement already satisfied: tomli>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (2.4.1)
 bc-concolic-1  | Requirement already satisfied: iniconfig>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (2.3.0)
 bc-concolic-1  | Requirement already satisfied: exceptiongroup>=1 in /usr/local/lib/python3.10/dist-packages (from pytest->-r requirements.txt (line 12)) (1.3.1)
+bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2.9.0.post0)
 bc-concolic-1  | Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2026.3.post1)
 bc-concolic-1  | Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2026.3)
-bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.10/dist-packages (from pandas->-r requirements.txt (line 13)) (2.9.0.post0)
-bc-concolic-1  | Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (2.7.1)
-bc-concolic-1  | Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.24.5)
-bc-concolic-1  | Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (6.7.1)
-bc-concolic-1  | Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (26.1.0)
-bc-concolic-1  | Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.4.0)
-bc-concolic-1  | Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (5.0.1)
-bc-concolic-1  | Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (0.5.2)
 bc-concolic-1  | Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.8.0)
-bc-concolic-1  | Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.37.2->-r requirements.txt (line 18)) (1.6.0)
+bc-concolic-1  | Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.4.0)
+bc-concolic-1  | Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (1.24.5)
+bc-concolic-1  | Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (0.5.2)
+bc-concolic-1  | Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (26.1.0)
+bc-concolic-1  | Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (6.7.1)
+bc-concolic-1  | Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (2.7.1)
+bc-concolic-1  | Requirement already satisfied: async-timeout<6.0,>=4.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp>=3.10->litellm==1.80.8->-r requirements.txt (line 5)) (5.0.1)
 bc-concolic-1  | Requirement already satisfied: fsspec>=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.37.2->-r requirements.txt (line 18)) (2026.7.0)
+bc-concolic-1  | Requirement already satisfied: hf-xet<2.0.0,>=1.1.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub<1.0,>=0.19.3->transformers==4.37.2->-r requirements.txt (line 18)) (1.6.0)
 bc-concolic-1  | Requirement already satisfied: zipp>=3.20 in /usr/local/lib/python3.10/dist-packages (from importlib-metadata>=6.8.0->litellm==1.80.8->-r requirements.txt (line 5)) (4.1.0)
 bc-concolic-1  | Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.10/dist-packages (from jinja2<4.0.0,>=3.1.2->litellm==1.80.8->-r requirements.txt (line 5)) (3.0.3)
+bc-concolic-1  | Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (0.30.0)
 bc-concolic-1  | Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (0.37.0)
 bc-concolic-1  | Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (2025.9.1)
-bc-concolic-1  | Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.10/dist-packages (from jsonschema<5.0.0,>=4.22.0->litellm==1.80.8->-r requirements.txt (line 5)) (0.30.0)
 bc-concolic-1  | Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.10/dist-packages (from markdown-it-py>=2.2.0->rich==13.9.4->-r requirements.txt (line 2)) (0.1.2)
 bc-concolic-1  | Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 13)) (1.17.0)
-bc-concolic-1  | Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (0.4.3)
-bc-concolic-1  | Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (4.11.3)
 bc-concolic-1  | Requirement already satisfied: python-discovery>=1.4.2 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (1.5.2)
-bc-concolic-1  | Requirement already satisfied: urllib3<3,>=1.26 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.37.2->-r requirements.txt (line 18)) (2.7.0)
+bc-concolic-1  | Requirement already satisfied: platformdirs<5,>=3.9.1 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (4.11.3)
+bc-concolic-1  | Requirement already satisfied: distlib<1,>=0.3.7 in /usr/local/lib/python3.10/dist-packages (from virtualenv>=20.10.0->pre-commit==3.6.0->-r requirements.txt (line 7)) (0.4.3)
 bc-concolic-1  | Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.37.2->-r requirements.txt (line 18)) (3.5.1)
+bc-concolic-1  | Requirement already satisfied: urllib3<3,>=1.26 in /usr/local/lib/python3.10/dist-packages (from requests->transformers==4.37.2->-r requirements.txt (line 18)) (2.7.0)
 bc-concolic-1  | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 bc-concolic-1  | Requirement already satisfied: black==24.4.0 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 1)) (24.4.0)
 bc-concolic-1  | Requirement already satisfied: isort==5.13.2 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 2)) (5.13.2)
@@ -2570,204 +2570,33 @@ bc-concolic-1  | Requirement already satisfied: ruff==0.3.7 in /usr/local/lib/py
 bc-concolic-1  | Requirement already satisfied: pyright==1.1.364 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 5)) (1.1.364)
 bc-concolic-1  | Requirement already satisfied: ruamel.yaml==0.18.10 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 6)) (0.18.10)
 bc-concolic-1  | Requirement already satisfied: venn==0.1.3 in /usr/local/lib/python3.10/dist-packages (from -r requirements-dev.txt (line 7)) (0.1.3)
-bc-concolic-1  | Requirement already satisfied: platformdirs>=2 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.11.3)
-bc-concolic-1  | Requirement already satisfied: typing-extensions>=4.0.1 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.16.0)
-bc-concolic-1  | Requirement already satisfied: packaging>=22.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (26.3)
 bc-concolic-1  | Requirement already satisfied: tomli>=1.1.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (2.4.1)
 bc-concolic-1  | Requirement already satisfied: pathspec>=0.9.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (1.1.1)
-bc-concolic-1  | Requirement already satisfied: click>=8.0.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (8.4.2)
+bc-concolic-1  | Requirement already satisfied: platformdirs>=2 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.11.3)
+bc-concolic-1  | Requirement already satisfied: packaging>=22.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (26.3)
+bc-concolic-1  | Requirement already satisfied: typing-extensions>=4.0.1 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (4.16.0)
 bc-concolic-1  | Requirement already satisfied: mypy-extensions>=0.4.3 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (1.1.0)
+bc-concolic-1  | Requirement already satisfied: click>=8.0.0 in /usr/local/lib/python3.10/dist-packages (from black==24.4.0->-r requirements-dev.txt (line 1)) (8.4.2)
 bc-concolic-1  | Requirement already satisfied: tokenize-rt>=5.2.0 in /usr/local/lib/python3.10/dist-packages (from pyupgrade==3.15.2->-r requirements-dev.txt (line 3)) (6.2.0)
 bc-concolic-1  | Requirement already satisfied: nodeenv>=1.6.0 in /usr/local/lib/python3.10/dist-packages (from pyright==1.1.364->-r requirements-dev.txt (line 5)) (1.10.0)
 bc-concolic-1  | Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in /usr/local/lib/python3.10/dist-packages (from ruamel.yaml==0.18.10->-r requirements-dev.txt (line 6)) (0.2.15)
 bc-concolic-1  | Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from venn==0.1.3->-r requirements-dev.txt (line 7)) (3.10.9)
-bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.9.0.post0)
 bc-concolic-1  | Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.5.0)
+bc-concolic-1  | Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.3.2)
+bc-concolic-1  | Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (0.12.1)
 bc-concolic-1  | Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (4.63.0)
 bc-concolic-1  | Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (12.3.0)
-bc-concolic-1  | Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.3.2)
-bc-concolic-1  | Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.2.6)
-bc-concolic-1  | Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (0.12.1)
+bc-concolic-1  | Requirement already satisfied: python-dateutil>=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.9.0.post0)
 bc-concolic-1  | Requirement already satisfied: pyparsing>=3 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (3.3.2)
+bc-concolic-1  | Requirement already satisfied: numpy>=1.23 in /usr/local/lib/python3.10/dist-packages (from matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (2.2.6)
 bc-concolic-1  | Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil>=2.7->matplotlib->venn==0.1.3->-r requirements-dev.txt (line 7)) (1.17.0)
 bc-concolic-1  | WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
 bc-concolic-1  | /bc-instr
 bc-concolic-1  | Testing completed. Starting replay with gcovr-instrumented binary.
-bc-concolic-1  | /run_local.sh: line 218: /shared/concolic-08241310-r11g/replay.log: No such file or directory
-bc-concolic-1  | /run_local.sh: line 220: /shared/concolic-08241310-r11g/run_data.log: No such file or directory
-bc-concolic-1  | Checking coverage for ./bc/const.h
-bc-concolic-1  | ./const.gcno:cannot open notes file
-bc-concolic-1  | ./const.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./bc/main.c
-bc-concolic-1  | ./main.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'main.c'
-bc-concolic-1  | Lines executed:0.00% of 134
-bc-concolic-1  | Branches executed:0.00% of 56
-bc-concolic-1  | Taken at least once:0.00% of 56
-bc-concolic-1  | Calls executed:0.00% of 41
-bc-concolic-1  | Creating 'main.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 134
-bc-concolic-1  | Lines executed:0.00% of 134
-bc-concolic-1  | Lines executed:0.00% of 134
-bc-concolic-1  | No coverage, skipping: ./bc/main.c
-bc-concolic-1  | Checking coverage for ./bc/storage.c
-bc-concolic-1  | ./storage.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'storage.c'
-bc-concolic-1  | Lines executed:0.00% of 487
-bc-concolic-1  | Branches executed:0.00% of 218
-bc-concolic-1  | Taken at least once:0.00% of 218
-bc-concolic-1  | Calls executed:0.00% of 117
-bc-concolic-1  | Creating 'storage.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 487
-bc-concolic-1  | Lines executed:0.00% of 487
-bc-concolic-1  | Lines executed:0.00% of 487
-bc-concolic-1  | No coverage, skipping: ./bc/storage.c
-bc-concolic-1  | Checking coverage for ./bc/global.c
-bc-concolic-1  | ./global.gcno:no functions found
-bc-concolic-1  | ./global.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./bc/warranty.c
-bc-concolic-1  | ./warranty.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'warranty.c'
-bc-concolic-1  | Lines executed:0.00% of 12
-bc-concolic-1  | No branches
-bc-concolic-1  | Calls executed:0.00% of 6
-bc-concolic-1  | Creating 'warranty.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 12
-bc-concolic-1  | Lines executed:0.00% of 12
-bc-concolic-1  | Lines executed:0.00% of 12
-bc-concolic-1  | No coverage, skipping: ./bc/warranty.c
-bc-concolic-1  | Checking coverage for ./bc/bc.c
-bc-concolic-1  | ./bc.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'bc.c'
-bc-concolic-1  | Lines executed:0.00% of 321
-bc-concolic-1  | Branches executed:0.00% of 214
-bc-concolic-1  | Taken at least once:0.00% of 214
-bc-concolic-1  | Calls executed:0.00% of 79
-bc-concolic-1  | Creating 'bc.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | File 'bc.y'
-bc-concolic-1  | Lines executed:0.00% of 348
-bc-concolic-1  | Branches executed:0.00% of 151
-bc-concolic-1  | Taken at least once:0.00% of 151
-bc-concolic-1  | Calls executed:0.00% of 190
-bc-concolic-1  | Creating 'bc.y.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 669
-bc-concolic-1  | Lines executed:0.00% of 321
-bc-concolic-1  | Lines executed:0.00% of 348
-bc-concolic-1  | Lines executed:0.00% of 669
-bc-concolic-1  | No coverage, skipping: ./bc/bc.c
-bc-concolic-1  | Checking coverage for ./bc/util.c
-bc-concolic-1  | ./util.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'util.c'
-bc-concolic-1  | Lines executed:0.00% of 359
-bc-concolic-1  | Branches executed:0.00% of 156
-bc-concolic-1  | Taken at least once:0.00% of 156
-bc-concolic-1  | Calls executed:0.00% of 70
-bc-concolic-1  | Creating 'util.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 359
-bc-concolic-1  | Lines executed:0.00% of 359
-bc-concolic-1  | Lines executed:0.00% of 359
-bc-concolic-1  | No coverage, skipping: ./bc/util.c
-bc-concolic-1  | Checking coverage for ./bc/bcdefs.h
-bc-concolic-1  | ./bcdefs.gcno:cannot open notes file
-bc-concolic-1  | ./bcdefs.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./bc/load.c
-bc-concolic-1  | ./load.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'load.c'
-bc-concolic-1  | Lines executed:0.00% of 164
-bc-concolic-1  | Branches executed:0.00% of 77
-bc-concolic-1  | Taken at least once:0.00% of 77
-bc-concolic-1  | Calls executed:0.00% of 45
-bc-concolic-1  | Creating 'load.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 164
-bc-concolic-1  | Lines executed:0.00% of 164
-bc-concolic-1  | Lines executed:0.00% of 164
-bc-concolic-1  | No coverage, skipping: ./bc/load.c
-bc-concolic-1  | Checking coverage for ./bc/scan.c
-bc-concolic-1  | ./scan.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'scan.l'
-bc-concolic-1  | Lines executed:0.00% of 100
-bc-concolic-1  | Branches executed:0.00% of 48
-bc-concolic-1  | Taken at least once:0.00% of 48
-bc-concolic-1  | Calls executed:0.00% of 18
-bc-concolic-1  | Creating 'scan.l.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | File 'scan.c'
-bc-concolic-1  | Lines executed:0.00% of 397
-bc-concolic-1  | Branches executed:0.00% of 226
-bc-concolic-1  | Taken at least once:0.00% of 226
-bc-concolic-1  | Calls executed:0.00% of 50
-bc-concolic-1  | Creating 'scan.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 497
-bc-concolic-1  | Lines executed:0.00% of 100
-bc-concolic-1  | Lines executed:0.00% of 397
-bc-concolic-1  | Lines executed:0.00% of 497
-bc-concolic-1  | No coverage, skipping: ./bc/scan.c
-bc-concolic-1  | Checking coverage for ./bc/proto.h
-bc-concolic-1  | ./proto.gcno:cannot open notes file
-bc-concolic-1  | ./proto.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./bc/execute.c
-bc-concolic-1  | ./execute.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'execute.c'
-bc-concolic-1  | Lines executed:0.00% of 433
-bc-concolic-1  | Branches executed:0.00% of 244
-bc-concolic-1  | Taken at least once:0.00% of 244
-bc-concolic-1  | Calls executed:0.00% of 195
-bc-concolic-1  | Creating 'execute.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 433
-bc-concolic-1  | Lines executed:0.00% of 433
-bc-concolic-1  | Lines executed:0.00% of 433
-bc-concolic-1  | No coverage, skipping: ./bc/execute.c
-bc-concolic-1  | Checking coverage for ./bc/bc.h
-bc-concolic-1  | ./bc.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'bc.c'
-bc-concolic-1  | Lines executed:0.00% of 321
-bc-concolic-1  | Branches executed:0.00% of 214
-bc-concolic-1  | Taken at least once:0.00% of 214
-bc-concolic-1  | Calls executed:0.00% of 79
-bc-concolic-1  | Creating 'bc.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | File 'bc.y'
-bc-concolic-1  | Lines executed:0.00% of 348
-bc-concolic-1  | Branches executed:0.00% of 151
-bc-concolic-1  | Taken at least once:0.00% of 151
-bc-concolic-1  | Calls executed:0.00% of 190
-bc-concolic-1  | Creating 'bc.y.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 669
-bc-concolic-1  | Lines executed:0.00% of 321
-bc-concolic-1  | Lines executed:0.00% of 348
-bc-concolic-1  | Lines executed:0.00% of 669
-bc-concolic-1  | No coverage, skipping: ./bc/bc.h
-bc-concolic-1  | rm: cannot remove 'bc.h.gcov': No such file or directory
-bc-concolic-1  | Checking coverage for ./bc/libmath.h
-bc-concolic-1  | ./libmath.gcno:cannot open notes file
-bc-concolic-1  | ./libmath.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./bc/global.h
-bc-concolic-1  | ./global.gcno:no functions found
-bc-concolic-1  | ./global.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./h/number.h
-bc-concolic-1  | ./number.gcno:cannot open notes file
-bc-concolic-1  | ./number.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./h/getopt.h
-bc-concolic-1  | ./getopt.gcno:cannot open notes file
-bc-concolic-1  | ./getopt.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
+bc-concolic-1  | 2026-08-24 13:34:09.884 | INFO     | app.utils.utils:load_code_from_file:65 - Loading file from ./code_example/prompt/sleep.c
+bc-concolic-1  | 2026-08-24 13:34:09.885 | INFO     | app.utils.utils:load_code_from_file:65 - Loading file from ./code_example/prompt/sleep.c.instr
+bc-concolic-1  | 2026-08-24 13:34:09.906 | WARNING  | app.agents.testcase:_load_testcases_from_dir:733 - Directory /shared/concolic-08241334-r11g/output/queue does not exist, skipping loading test cases
+bc-concolic-1  | 2026-08-24 13:34:09.906 | INFO     | app.agents.testcase:load_testcases:775 - Loaded 0 test cases
 bc-concolic-1  | Checking coverage for ./lib/number.c
 bc-concolic-1  | ./number.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | File 'number.c'
@@ -2797,6 +2626,27 @@ bc-concolic-1  | Checking coverage for ./lib/vfprintf.c
 bc-concolic-1  | ./vfprintf.gcno:no functions found
 bc-concolic-1  | ./vfprintf.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./h/number.h
+bc-concolic-1  | ./number.gcno:cannot open notes file
+bc-concolic-1  | ./number.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./h/getopt.h
+bc-concolic-1  | ./getopt.gcno:cannot open notes file
+bc-concolic-1  | ./getopt.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./dc/input.c
+bc-concolic-1  | ./input.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'input.c'
+bc-concolic-1  | Lines executed:0.00% of 33
+bc-concolic-1  | Branches executed:0.00% of 16
+bc-concolic-1  | Taken at least once:0.00% of 16
+bc-concolic-1  | Calls executed:0.00% of 9
+bc-concolic-1  | Creating 'input.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 33
+bc-concolic-1  | Lines executed:0.00% of 33
+bc-concolic-1  | Lines executed:0.00% of 33
+bc-concolic-1  | No coverage, skipping: ./dc/input.c
 bc-concolic-1  | Checking coverage for ./dc/dc.c
 bc-concolic-1  | ./dc.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | File 'dc.c'
@@ -2810,36 +2660,6 @@ bc-concolic-1  | Lines executed:0.00% of 92
 bc-concolic-1  | Lines executed:0.00% of 92
 bc-concolic-1  | Lines executed:0.00% of 92
 bc-concolic-1  | No coverage, skipping: ./dc/dc.c
-bc-concolic-1  | Checking coverage for ./dc/dc-proto.h
-bc-concolic-1  | ./dc-proto.gcno:cannot open notes file
-bc-concolic-1  | ./dc-proto.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | No executable lines
-bc-concolic-1  | Checking coverage for ./dc/numeric.c
-bc-concolic-1  | ./numeric.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'numeric.c'
-bc-concolic-1  | Lines executed:0.00% of 235
-bc-concolic-1  | Branches executed:0.00% of 78
-bc-concolic-1  | Taken at least once:0.00% of 78
-bc-concolic-1  | Calls executed:0.00% of 100
-bc-concolic-1  | Creating 'numeric.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 235
-bc-concolic-1  | Lines executed:0.00% of 235
-bc-concolic-1  | Lines executed:0.00% of 235
-bc-concolic-1  | No coverage, skipping: ./dc/numeric.c
-bc-concolic-1  | Checking coverage for ./dc/misc.c
-bc-concolic-1  | ./misc.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'misc.c'
-bc-concolic-1  | Lines executed:0.00% of 65
-bc-concolic-1  | Branches executed:0.00% of 26
-bc-concolic-1  | Taken at least once:0.00% of 26
-bc-concolic-1  | Calls executed:0.00% of 26
-bc-concolic-1  | Creating 'misc.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 65
-bc-concolic-1  | Lines executed:0.00% of 65
-bc-concolic-1  | Lines executed:0.00% of 65
-bc-concolic-1  | No coverage, skipping: ./dc/misc.c
 bc-concolic-1  | Checking coverage for ./dc/eval.c
 bc-concolic-1  | ./eval.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | File 'eval.c'
@@ -2866,19 +2686,23 @@ bc-concolic-1  | Lines executed:0.00% of 70
 bc-concolic-1  | Lines executed:0.00% of 70
 bc-concolic-1  | Lines executed:0.00% of 70
 bc-concolic-1  | No coverage, skipping: ./dc/array.c
-bc-concolic-1  | Checking coverage for ./dc/stack.c
-bc-concolic-1  | ./stack.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'stack.c'
-bc-concolic-1  | Lines executed:0.00% of 224
-bc-concolic-1  | Branches executed:0.00% of 102
-bc-concolic-1  | Taken at least once:0.00% of 102
-bc-concolic-1  | Calls executed:0.00% of 62
-bc-concolic-1  | Creating 'stack.c.gcov'
+bc-concolic-1  | Checking coverage for ./dc/misc.c
+bc-concolic-1  | ./misc.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'misc.c'
+bc-concolic-1  | Lines executed:0.00% of 65
+bc-concolic-1  | Branches executed:0.00% of 26
+bc-concolic-1  | Taken at least once:0.00% of 26
+bc-concolic-1  | Calls executed:0.00% of 26
+bc-concolic-1  | Creating 'misc.c.gcov'
 bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 224
-bc-concolic-1  | Lines executed:0.00% of 224
-bc-concolic-1  | Lines executed:0.00% of 224
-bc-concolic-1  | No coverage, skipping: ./dc/stack.c
+bc-concolic-1  | Lines executed:0.00% of 65
+bc-concolic-1  | Lines executed:0.00% of 65
+bc-concolic-1  | Lines executed:0.00% of 65
+bc-concolic-1  | No coverage, skipping: ./dc/misc.c
+bc-concolic-1  | Checking coverage for ./dc/dc-regdef.h
+bc-concolic-1  | ./dc-regdef.gcno:cannot open notes file
+bc-concolic-1  | ./dc-regdef.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
 bc-concolic-1  | Checking coverage for ./dc/dc.h
 bc-concolic-1  | ./dc.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | File 'dc.c'
@@ -2906,23 +2730,201 @@ bc-concolic-1  | Lines executed:0.00% of 72
 bc-concolic-1  | Lines executed:0.00% of 72
 bc-concolic-1  | Lines executed:0.00% of 72
 bc-concolic-1  | No coverage, skipping: ./dc/string.c
-bc-concolic-1  | Checking coverage for ./dc/input.c
-bc-concolic-1  | ./input.gcda:cannot open data file, assuming not executed
-bc-concolic-1  | File 'input.c'
-bc-concolic-1  | Lines executed:0.00% of 33
-bc-concolic-1  | Branches executed:0.00% of 16
-bc-concolic-1  | Taken at least once:0.00% of 16
-bc-concolic-1  | Calls executed:0.00% of 9
-bc-concolic-1  | Creating 'input.c.gcov'
-bc-concolic-1  | 
-bc-concolic-1  | Lines executed:0.00% of 33
-bc-concolic-1  | Lines executed:0.00% of 33
-bc-concolic-1  | Lines executed:0.00% of 33
-bc-concolic-1  | No coverage, skipping: ./dc/input.c
-bc-concolic-1  | Checking coverage for ./dc/dc-regdef.h
-bc-concolic-1  | ./dc-regdef.gcno:cannot open notes file
-bc-concolic-1  | ./dc-regdef.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | Checking coverage for ./dc/dc-proto.h
+bc-concolic-1  | ./dc-proto.gcno:cannot open notes file
+bc-concolic-1  | ./dc-proto.gcda:cannot open data file, assuming not executed
 bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./dc/numeric.c
+bc-concolic-1  | ./numeric.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'numeric.c'
+bc-concolic-1  | Lines executed:0.00% of 235
+bc-concolic-1  | Branches executed:0.00% of 78
+bc-concolic-1  | Taken at least once:0.00% of 78
+bc-concolic-1  | Calls executed:0.00% of 100
+bc-concolic-1  | Creating 'numeric.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 235
+bc-concolic-1  | Lines executed:0.00% of 235
+bc-concolic-1  | Lines executed:0.00% of 235
+bc-concolic-1  | No coverage, skipping: ./dc/numeric.c
+bc-concolic-1  | Checking coverage for ./dc/stack.c
+bc-concolic-1  | ./stack.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'stack.c'
+bc-concolic-1  | Lines executed:0.00% of 224
+bc-concolic-1  | Branches executed:0.00% of 102
+bc-concolic-1  | Taken at least once:0.00% of 102
+bc-concolic-1  | Calls executed:0.00% of 62
+bc-concolic-1  | Creating 'stack.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 224
+bc-concolic-1  | Lines executed:0.00% of 224
+bc-concolic-1  | Lines executed:0.00% of 224
+bc-concolic-1  | No coverage, skipping: ./dc/stack.c
+bc-concolic-1  | Checking coverage for ./bc/storage.c
+bc-concolic-1  | ./storage.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'storage.c'
+bc-concolic-1  | Lines executed:0.00% of 487
+bc-concolic-1  | Branches executed:0.00% of 218
+bc-concolic-1  | Taken at least once:0.00% of 218
+bc-concolic-1  | Calls executed:0.00% of 117
+bc-concolic-1  | Creating 'storage.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 487
+bc-concolic-1  | Lines executed:0.00% of 487
+bc-concolic-1  | Lines executed:0.00% of 487
+bc-concolic-1  | No coverage, skipping: ./bc/storage.c
+bc-concolic-1  | Checking coverage for ./bc/bc.c
+bc-concolic-1  | ./bc.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'bc.c'
+bc-concolic-1  | Lines executed:0.00% of 321
+bc-concolic-1  | Branches executed:0.00% of 214
+bc-concolic-1  | Taken at least once:0.00% of 214
+bc-concolic-1  | Calls executed:0.00% of 79
+bc-concolic-1  | Creating 'bc.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | File 'bc.y'
+bc-concolic-1  | Lines executed:0.00% of 348
+bc-concolic-1  | Branches executed:0.00% of 151
+bc-concolic-1  | Taken at least once:0.00% of 151
+bc-concolic-1  | Calls executed:0.00% of 190
+bc-concolic-1  | Creating 'bc.y.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 669
+bc-concolic-1  | Lines executed:0.00% of 321
+bc-concolic-1  | Lines executed:0.00% of 348
+bc-concolic-1  | Lines executed:0.00% of 669
+bc-concolic-1  | No coverage, skipping: ./bc/bc.c
+bc-concolic-1  | Checking coverage for ./bc/bc.h
+bc-concolic-1  | ./bc.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'bc.c'
+bc-concolic-1  | Lines executed:0.00% of 321
+bc-concolic-1  | Branches executed:0.00% of 214
+bc-concolic-1  | Taken at least once:0.00% of 214
+bc-concolic-1  | Calls executed:0.00% of 79
+bc-concolic-1  | Creating 'bc.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | File 'bc.y'
+bc-concolic-1  | Lines executed:0.00% of 348
+bc-concolic-1  | Branches executed:0.00% of 151
+bc-concolic-1  | Taken at least once:0.00% of 151
+bc-concolic-1  | Calls executed:0.00% of 190
+bc-concolic-1  | Creating 'bc.y.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 669
+bc-concolic-1  | Lines executed:0.00% of 321
+bc-concolic-1  | Lines executed:0.00% of 348
+bc-concolic-1  | Lines executed:0.00% of 669
+bc-concolic-1  | No coverage, skipping: ./bc/bc.h
+bc-concolic-1  | rm: cannot remove 'bc.h.gcov': No such file or directory
+bc-concolic-1  | Checking coverage for ./bc/main.c
+bc-concolic-1  | ./main.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'main.c'
+bc-concolic-1  | Lines executed:0.00% of 134
+bc-concolic-1  | Branches executed:0.00% of 56
+bc-concolic-1  | Taken at least once:0.00% of 56
+bc-concolic-1  | Calls executed:0.00% of 41
+bc-concolic-1  | Creating 'main.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 134
+bc-concolic-1  | Lines executed:0.00% of 134
+bc-concolic-1  | Lines executed:0.00% of 134
+bc-concolic-1  | No coverage, skipping: ./bc/main.c
+bc-concolic-1  | Checking coverage for ./bc/load.c
+bc-concolic-1  | ./load.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'load.c'
+bc-concolic-1  | Lines executed:0.00% of 164
+bc-concolic-1  | Branches executed:0.00% of 77
+bc-concolic-1  | Taken at least once:0.00% of 77
+bc-concolic-1  | Calls executed:0.00% of 45
+bc-concolic-1  | Creating 'load.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 164
+bc-concolic-1  | Lines executed:0.00% of 164
+bc-concolic-1  | Lines executed:0.00% of 164
+bc-concolic-1  | No coverage, skipping: ./bc/load.c
+bc-concolic-1  | Checking coverage for ./bc/bcdefs.h
+bc-concolic-1  | ./bcdefs.gcno:cannot open notes file
+bc-concolic-1  | ./bcdefs.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/execute.c
+bc-concolic-1  | ./execute.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'execute.c'
+bc-concolic-1  | Lines executed:0.00% of 433
+bc-concolic-1  | Branches executed:0.00% of 244
+bc-concolic-1  | Taken at least once:0.00% of 244
+bc-concolic-1  | Calls executed:0.00% of 195
+bc-concolic-1  | Creating 'execute.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 433
+bc-concolic-1  | Lines executed:0.00% of 433
+bc-concolic-1  | Lines executed:0.00% of 433
+bc-concolic-1  | No coverage, skipping: ./bc/execute.c
+bc-concolic-1  | Checking coverage for ./bc/warranty.c
+bc-concolic-1  | ./warranty.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'warranty.c'
+bc-concolic-1  | Lines executed:0.00% of 12
+bc-concolic-1  | No branches
+bc-concolic-1  | Calls executed:0.00% of 6
+bc-concolic-1  | Creating 'warranty.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 12
+bc-concolic-1  | Lines executed:0.00% of 12
+bc-concolic-1  | Lines executed:0.00% of 12
+bc-concolic-1  | No coverage, skipping: ./bc/warranty.c
+bc-concolic-1  | Checking coverage for ./bc/proto.h
+bc-concolic-1  | ./proto.gcno:cannot open notes file
+bc-concolic-1  | ./proto.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/global.c
+bc-concolic-1  | ./global.gcno:no functions found
+bc-concolic-1  | ./global.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/scan.c
+bc-concolic-1  | ./scan.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'scan.l'
+bc-concolic-1  | Lines executed:0.00% of 100
+bc-concolic-1  | Branches executed:0.00% of 48
+bc-concolic-1  | Taken at least once:0.00% of 48
+bc-concolic-1  | Calls executed:0.00% of 18
+bc-concolic-1  | Creating 'scan.l.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | File 'scan.c'
+bc-concolic-1  | Lines executed:0.00% of 397
+bc-concolic-1  | Branches executed:0.00% of 226
+bc-concolic-1  | Taken at least once:0.00% of 226
+bc-concolic-1  | Calls executed:0.00% of 50
+bc-concolic-1  | Creating 'scan.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 497
+bc-concolic-1  | Lines executed:0.00% of 100
+bc-concolic-1  | Lines executed:0.00% of 397
+bc-concolic-1  | Lines executed:0.00% of 497
+bc-concolic-1  | No coverage, skipping: ./bc/scan.c
+bc-concolic-1  | Checking coverage for ./bc/global.h
+bc-concolic-1  | ./global.gcno:no functions found
+bc-concolic-1  | ./global.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/libmath.h
+bc-concolic-1  | ./libmath.gcno:cannot open notes file
+bc-concolic-1  | ./libmath.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/const.h
+bc-concolic-1  | ./const.gcno:cannot open notes file
+bc-concolic-1  | ./const.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | No executable lines
+bc-concolic-1  | Checking coverage for ./bc/util.c
+bc-concolic-1  | ./util.gcda:cannot open data file, assuming not executed
+bc-concolic-1  | File 'util.c'
+bc-concolic-1  | Lines executed:0.00% of 359
+bc-concolic-1  | Branches executed:0.00% of 156
+bc-concolic-1  | Taken at least once:0.00% of 156
+bc-concolic-1  | Calls executed:0.00% of 70
+bc-concolic-1  | Creating 'util.c.gcov'
+bc-concolic-1  | 
+bc-concolic-1  | Lines executed:0.00% of 359
+bc-concolic-1  | Lines executed:0.00% of 359
+bc-concolic-1  | Lines executed:0.00% of 359
+bc-concolic-1  | No coverage, skipping: ./bc/util.c
 bc-concolic-1  | Checking coverage for ./config.h
 bc-concolic-1  | ./config.gcno:cannot open notes file
 bc-concolic-1  | ./config.gcda:cannot open data file, assuming not executed

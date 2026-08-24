@@ -116,14 +116,14 @@ case $TESTER_NAME in
     ;;
   "concolic")
     echo "Running with Concolic"
-    echo "python3 ACE.py run --project_dir $INSTR_ROOT --execution ${INPUT}/bc.py --timeout 10 --out $OUTPUT --plateau_slot 30"  >> ${SHARED_DIR}/execution_command.log
+    echo "python3 ACE.py run --project_dir $INSTR_ROOT --execution ${INPUT}/bc.py --timeout 10 --out $OUTPUT --plateau_slot 30 --parallel_num 16"  >> ${SHARED_DIR}/execution_command.log
 
     # call the wrapped function to pull the latest version of ConcoLLMic
     setup_concolic_environment
 
     cd /concolic-agent
     timeout -k 10 $TIMEOUT_SECONDS /bin/bash -c \
-        "python3 ACE.py run --project_dir $INSTR_ROOT --execution ${INPUT}/bc.py --timeout 10 --out $OUTPUT --plateau_slot 30" \
+        "python3 ACE.py run --project_dir $INSTR_ROOT --execution ${INPUT}/bc.py --timeout 10 --out $OUTPUT --plateau_slot 30 --parallel_num 16" \
         > /dev/null 2>&1 &
     wait
     export QUEUE_DIR="$OUTPUT"
