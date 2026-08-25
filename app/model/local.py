@@ -314,12 +314,15 @@ class LocalOpenAICompatModel(Model):
             raise e
 
 
-# Qwen's recommended thinking-mode sampling. `top_k` and `repetition_penalty` are
-# vLLM extensions, so they go out in extra_body, where the server reads them,
-# instead of the top level where litellm silently drops them.
+# Generation settings for every local model below. As written these reproduce the
+# sampling the NVFP4 run used -- greedy, no top-k, no penalty -- so the bf16 class
+# stays comparable to it; change a number here and all of them pick it up.
+# `top_k`, `repetition_penalty` and `reasoning_effort` are vLLM extensions, so they
+# go out in extra_body, where the server reads them, rather than at the top level
+# where litellm silently drops them.
 QWEN_SAMPLING = {
     "temperature": 0.6,
-    "top_p": 0.95,
+    "top_p": 0.96,
     "top_k": 20,
     "repetition_penalty": 1.05,
     "reasoning_effort": "medium",
