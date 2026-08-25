@@ -87,7 +87,7 @@ class LocalOpenAICompatModel(Model):
         max_output_length: int = DEFAULT_MAX_OUTPUT_TOKENS,
         context_length: int = 200_000,
         parallel_tool_call: bool = True,
-        reasoning_effort: str|None = None
+        reasoning_effort: str|None = None,
     ):
         if self._initialized:
             return
@@ -188,18 +188,21 @@ class LocalOpenAICompatModel(Model):
                     )
 
             start_time = time.time()
+
             response = litellm.completion(
                 model=self.served_name,
                 custom_llm_provider="openai",
                 api_base=self.api_base,
                 api_key=self.check_api_key(),
                 messages=_sanitize_messages(messages),
-                temperature=0.6,
+                temperature=0.1,
+                #max_tokens=self.max_output_token,
                 max_tokens=self.max_output_token,
                 reasoning_effort=self.reasoning_effort,
-                top_p=0.95,
-                top_k=20,
+                top_p=0.98,
                 stream=False,
+                thinking_token_budget=16_000,
+                repetition_penalty=1.05,
                 tools=tools,
                 drop_params=True,  # tolerate servers lacking e.g. parallel_tool_calls
                 **request_kwargs,
@@ -274,7 +277,8 @@ class Qwen3_8_27B_NVFP4(LocalOpenAICompatModel):
         super().__init__("gittensor-model-hub/Qwen3.8-27B-NVFP4-RTX5090", max_output_length=32_768 , context_length=262144)
         self.note = "Qwen3.8 27B quantized to NVFP4, served locally."
 
+# TODO: pass kwargs into generation.
 class Qwen3_8_27B(LocalOpenAICompatModel):
     def __init__(self):
-        super().__init__("Qwen/Qwen3.8-27B", max_output_length=64_000, context_length=262144, reasoning_effort="medium")
+        super().__init__("Qwen/Qwen3.8-27B", max_output_length=32_768, context_length=262144, reasoning_effort="medium")
         self.note = "Qwen3.8 27B at bf16/fp16 served locally. ~54 GB of weights."
